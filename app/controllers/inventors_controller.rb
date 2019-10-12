@@ -1,0 +1,2 @@
+class InventorsController < ApplicationController
+end
