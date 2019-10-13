@@ -3,5 +3,6 @@ class Inventor < ApplicationRecord
   has_many :ideas
   has_many :groups through: :ideas
   has_many :investors through: :ideas
+  has_many :comments through: :ideas
 
 end
