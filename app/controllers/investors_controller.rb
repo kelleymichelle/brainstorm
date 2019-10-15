@@ -7,7 +7,7 @@ class InvestorsController < ApplicationController
   def create
     @investor = Investor.create(user_params)
     return redirect_to controller: 'investors', action: 'new' unless @investor.save
-    session[:investor_id] = @investor.id
+    session[:user_id] = @investor.id
     redirect_to controller: 'welcome', action: 'home'
   end
 

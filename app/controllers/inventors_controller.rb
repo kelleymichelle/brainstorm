@@ -1,7 +1,8 @@
 class InventorsController < ApplicationController
 
   def show
-    raise params.inspect
+    @inventor = Inventor.find(params[:id])
+    
   end
 
   def new
