@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # @user = Inventor.find_by(name: params[:name]) || Investor.find_by(name: params[:name])
+    @account = Account.find_by(username: params[:username])
     
-    # if @user && @user.authenticate(params[:password])
-    #     session[:user_id] = @user.id
-    #     redirect_to investor_path(@user) || inventor_path(@user)
-    # else
-    #     render 'new'
-    # end     
+    if @account && @account.authenticate(params[:password])
+        session[:account_id] = @account.id
+        session[:accountable_type] = params[:accountable_type]
+    else
+        render 'new'
+    end     
 end
 
 def destroy

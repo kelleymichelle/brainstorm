@@ -3,9 +3,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   helper_method :authenticate_user
+  helper_method :is_inventor?
 
   def current_user
-    # Inventor.find_by(id: session[:inventor_id]) || Investor.find_by(id: session[:investor_id])
+    Account.find_by(id: session[:account_id])
   end
 
   def logged_in?
@@ -17,5 +18,13 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
     end 
   end  
+
+  def is_inventor?
+    current_user.accountable_type == "inventor"
+  end
+
+  def is_investor?
+    current_user.accountable_type == "investor"
+  end
 
 end

@@ -1,22 +1,24 @@
-Create Account: Are you an Inventor or an Investor?
+Create Account
+<%# Create Account: Are you an Inventor or an Investor? %>
 <%= form_for(@account) do |f| %>
-  <%= f.text_field :username, placeholder: "Username" %>
+  
   <%= f.label :username %>
-  <%= error_msg_for(@account, :username).html_safe %>
-  <%= f.text_field :email, placeholder: "Email" %>
+  <%= f.text_field :username %>
+  <%# <%= error_msg_for(@account, :username).html_safe %>
   <%= f.label :email %>
-  <%= error_msg_for(@account, :email).html_safe %>
-  <%= f.password_field, placeholder: "Password" %>
+  <%= f.text_field :email %>
+  <%# <%= error_msg_for(@account, :email).html_safe %>
   <%= f.label :password %>
-  <%= error_msg_for(@account, :password).html_safe %>
-  <%= f.password_field, placeholder: "Confirm Password" %>
+  <%= f.password_field :password %>
+  <%# <%= error_msg_for(@account, :password).html_safe %>
   <%= f.label :password_confirmation %>
-  <%= error_msg_for(@account, :password_confirmation).html_safe %>
-  <%= f.radio_button :inventor, placeholer: "Inventor?" %>
-  <%= f.label :inventor %>
-  <%= f.radio_button :investor, placeholder: "Investor?" %>
-  <%= f.label :investor %>
+  <%= f.password_field :password_confirmation %>
+  <%# <%= error_msg_for(@account, :password_confirmation).html_safe %>
+  <%= f.label :inventor, "Inventor" %>
+  <%= f.radio_button :accountable_type, 'inventor' %>
+  <%= f.label :investor, "Investor" %>
+  <%= f.radio_button :accountable_type, 'investor' %>
 
-  <%= f.submit 'Get stormin" %>
+  <%= f.submit "Get stormin'" %>
 
 <% end %>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
 
   resources :investors
   resources :inventors
   resources :accounts
   
-  root 'welcome#index'
 
   resources :comments
   resources :groups
