@@ -1,4 +1,5 @@
 class Inventor < ApplicationRecord
+  include Accountable
 
   validates :name, presence: true
   validates :bio, length { maximum: 500 }
