@@ -1,5 +1,5 @@
 class Idea < ApplicationRecord
   belongs_to :inventor
   belongs_to :group
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end
