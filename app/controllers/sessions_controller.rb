@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if @account && @account.authenticate(params[:password])
         session[:account_id] = @account.id
         session[:accountable_type] = params[:accountable_type]
+        redirect_to 
     else
         render 'new'
     end     

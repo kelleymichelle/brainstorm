@@ -28,30 +28,4 @@ after you create your account, redirect to either investor#new OR inventor#new b
 @inventor = Inventor.new(inventor_params)
 @inventor.account = Account.find(session[:account_id])
 
-
-
-<%= form_for :inventor, url: '/inventors' do |f| %>
-  Name: <%= f.text_field :name %><br>
-  Email: <%= f.text_field :email %><br>
-  Location: <%= f.text_field :location %><br>
-  Bio: <%= f.text_area :bio %><br>
-  Password: <%= f.password_field :password %><br>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
-  <%= f.submit "Submit" %>
-<% end %>
-
-class Inventor < ApplicationRecord
-  has_secure_password
-  has_many :ideas
-  has_many :groups, through: :ideas
-  has_many :investors, through: :ideas
-  has_many :comments, through: :ideas
-
-
-end
-
-class Investor < ApplicationRecord
-  has_secure_password
-  has_many :inventors, through: :ideas
-  has_many :ideas, through: :inventors
-end
+helper method to determine if accountable is investor or inventor
