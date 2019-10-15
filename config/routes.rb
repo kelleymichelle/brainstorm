@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+
   resources :comments
   resources :groups
   resources :ideas
