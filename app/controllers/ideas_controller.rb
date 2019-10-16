@@ -6,6 +6,10 @@ class IdeasController < ApplicationController
 
   # before_action :find_inventor
 
+  def index
+    @ideas = Idea.all
+  end
+  
   def show
     
   end

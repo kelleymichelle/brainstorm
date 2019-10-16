@@ -1,0 +1,6 @@
+All Current Ideas<br><br>
+<% @ideas.each do |idea| %>
+  <%= link_to idea.title, idea_path(idea) %> -
+  <%= idea.description %> -
+  <%= link_to idea.inventor.name, inventor_path(idea.inventor) %>
+<% end %>  

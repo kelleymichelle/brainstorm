@@ -5,6 +5,14 @@ Inventor show page<br>
 Located in <%= @inventor.location %><br>
 
 A little about me: <%= @inventor.bio %><br>
+<br>
+My Ideas:<br>
 
-<%= link_to 'Brainstrom Here!', new_inventor_idea_path(@inventor) %>
-<%= link_to 'My Ideas', inventor_ideas_path(@inventor) %>
+<% @inventor.ideas.each do |idea| %>
+  <%= link_to idea.title, idea_path(idea) %>
+  <%= time_of_creation(idea) %>
+  <br>
+<% end %>
+<br>
+<%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
+

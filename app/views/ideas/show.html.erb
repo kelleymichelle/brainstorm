@@ -1,1 +1,7 @@
-<%= @idea %>
+Brainstorm - <%= @idea.title %><br>
+<%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %><br>
+<%= @idea.description %><br>
+<%= @idea.group.name %><br>
+<%= @idea.fund_goal %><br><br>
+
+<%= link_to 'Browse all Ideas', ideas_path %>
