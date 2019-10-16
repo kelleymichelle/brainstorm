@@ -1,11 +1,28 @@
 class InvestorsController < ApplicationController
 
+  before_action :authenticate_user
+  before_action :is_investor?, except: [:index, :show] 
+
+  before_action :find_investor, only: [:show, :update]
+
+  def index
+    @investors = Investor.all
+  end
+
+  def show
+    #individual show page
+  end
+
   def edit
     @investor = current_user.accountable
   end
 
   def update
-    raise params.inspect
+    if @investor.update(investor_params)
+      redirect_to investor_path(@investor)
+    else
+      render :edit
+    end    
   end
 
   private
@@ -14,5 +31,8 @@ class InvestorsController < ApplicationController
     params.require(:investor).permit(:name, :location, :bio)
   end
 
+  def find_investor
+    @investor = Investor.find(params[:id])
+  end
 
 end

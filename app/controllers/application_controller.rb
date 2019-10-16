@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :authenticate_user
   helper_method :is_inventor?
+  helper_method :is_investor?
 
   def current_user
     Account.find_by(id: session[:account_id])
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
     if !logged_in? 
     redirect_to root_path
     end 
-  end  
+  end
 
   def is_inventor?
     current_user.accountable_type == "inventor"

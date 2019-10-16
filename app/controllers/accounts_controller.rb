@@ -20,13 +20,13 @@ class AccountsController < ApplicationController
       
         # flash[:success] = "Welcome #{@account.username}!"
         if @account.accountable_type == "inventor"
-          redirect_to edit_inventor_path
+          redirect_to edit_inventor_path(@account.accountable)
         else @account.accountable_type == "investor"
-          redirect_to edit_investor_path  
+          redirect_to edit_investor_path(@account.accountable)  
         end  
-    # else
+    else
     #     flash[:danger] = "Oops! There was trouble making your acount."
-    #     render 'new'
+        render 'new'
     end
 
   end

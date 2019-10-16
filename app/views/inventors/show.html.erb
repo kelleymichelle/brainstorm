@@ -1,0 +1,10 @@
+Inventor show page<br>
+
+<%= @inventor.name %><br>
+
+Located in <%= @inventor.location %><br>
+
+A little about me: <%= @inventor.bio %><br>
+
+<%= link_to 'Brainstrom Here!', new_inventor_idea_path(@inventor) %>
+<%= link_to 'My Ideas', inventor_ideas_path(@inventor) %>
