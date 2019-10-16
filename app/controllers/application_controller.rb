@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   helper_method :inventor_account
   helper_method :investor_account
 
+  private
+  
   def current_user
     Account.find_by(id: session[:account_id])
   end
