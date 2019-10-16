@@ -1,7 +1,7 @@
 class InventorsController < ApplicationController
 
   before_action :authenticate_user
-  before_action :is_inventor?, except: [:index, :show]
+  before_action :inventor_account, except: [:index, :show]
 
   before_action :find_inventor, only: [:show, :update]
 

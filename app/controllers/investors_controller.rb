@@ -1,7 +1,7 @@
 class InvestorsController < ApplicationController
 
   before_action :authenticate_user
-  before_action :is_investor?, except: [:index, :show] 
+  before_action :investor_account, except: [:index, :show] 
 
   before_action :find_investor, only: [:show, :update]
 

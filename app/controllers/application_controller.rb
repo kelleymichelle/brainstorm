@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   helper_method :authenticate_user
-  helper_method :is_inventor?
-  helper_method :is_investor?
+  helper_method :inventor_account
+  helper_method :investor_account
 
   def current_user
     Account.find_by(id: session[:account_id])
@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
     end 
   end
 
-  def is_inventor?
+  def inventor_account
     current_user.accountable_type == "inventor"
   end
 
-  def is_investor?
+  def investor_account
     current_user.accountable_type == "investor"
   end
 
