@@ -8,6 +8,7 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @groups = Group.all.order(:name)
   end
 
   def create
@@ -17,7 +18,7 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :description, :fund_goal)
+    params.require(:idea).permit(:title, :description, :fund_goal, :group_id)
   end
 
   def find_idea

@@ -1,1 +1,19 @@
-New Brainstorm Form
+What are you thinking about? 
+
+<%= form_for(@idea) do |f|  %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :group %>
+  <%= f.collection_select :group_id, Group.order(:name), :id, :name, include_blank: true %>
+
+  <%= f.label :fund_goal, "Funding Goal" %>
+  <%= f.text_field :fund_goal %>
+
+  <%= f.submit "Brainstorm!" %>
+
+<% end%>
