@@ -6,13 +6,24 @@ class IdeasController < ApplicationController
 
   # before_action :find_inventor
 
+  def show
+    
+  end
+
   def new
     @idea = Idea.new
     @groups = Group.all.order(:name)
   end
 
   def create
-    raise params.inspect
+    # raise params.inspect
+    # byebug
+    @idea = inventor_account.ideas.build(idea_params)
+    if @idea.save!
+      redirect_to inventor_idea_path(inventor_account, @idea), notice: "Brainstorm!"
+    else 
+      redirect_to new_item_path
+    end   
   end
 
   private

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :investor_account
 
   private
-  
+
   def current_user
     Account.find_by(id: session[:account_id])
   end
@@ -23,11 +23,15 @@ class ApplicationController < ActionController::Base
   end
 
   def inventor_account
-    current_user.accountable_type == "inventor"
+    if current_user.accountable_type == "Inventor"
+      current_user.accountable
+    end
   end
 
   def investor_account
-    current_user.accountable_type == "investor"
+    if current_user.accountable_type == "Investor"
+      current_user.accountable
+    end
   end
 
 end

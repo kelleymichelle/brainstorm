@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Group.create(name: 'scientific-technological')
+Group.create(name: 'sociopolitical')
+Group.create(name: 'humanistic/cultural')
