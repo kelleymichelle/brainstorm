@@ -1,8 +1,8 @@
-Brainstorm - <%= @idea.title %><br>
-<%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %><br>
-<%= @idea.description %><br>
-<%= @idea.group.name %><br>
-$<%= @idea.fund_goal %><br><br>
+<%= @idea.title %><br>
+Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %><br>
+Decription: <%= @idea.description %><br>
+Grouping: <%= @idea.group.name %><br>
+Funding Goal: $<%= @idea.fund_goal %><br><br>
 
 <% if inventor_account %>
 

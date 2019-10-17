@@ -1,9 +1,9 @@
 class Investor < ApplicationRecord
   include Accountable
 
-  # validates :name, presence: true
-  # validates :bio, length { maximum: 500 }
-  # validates :location, presence: true 
+  validates :name, presence: true
+  validates :bio, length: { maximum: 500 }
+  validates :location, presence: true 
 
   has_one :account, as: :accountable, dependent: :destroy
   has_many :inventors, through: :ideas
