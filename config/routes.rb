@@ -7,12 +7,18 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
+  post '/ideas/:id/comments/new', to: 'comments#create'
+
   resources :inventors do
     resources :ideas
   end
   
   resources :investors do
     resources :ideas
+  end
+
+  resources :ideas do
+    resources :comments
   end
 
   resources :investors

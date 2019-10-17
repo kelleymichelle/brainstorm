@@ -9,7 +9,7 @@ A little about me: <%= @inventor.bio %><br>
 My Ideas:<br>
 
 <% @inventor.ideas.each do |idea| %>
-  <%= link_to idea.title, idea_path(idea) %>
+  <%= link_to idea.title, idea_path(idea) %> - 
   <%= time_of_creation(idea) %>
   <br>
 <% end %>

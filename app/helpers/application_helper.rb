@@ -11,4 +11,10 @@ module ApplicationHelper
     end    
   end
 
+  # def time_of_creation(idea)
+  #   idea.created_at.strftime("Brainstormed at %A, %b %e, at %l:%M %p")
+  # end
+  
+
+
 end

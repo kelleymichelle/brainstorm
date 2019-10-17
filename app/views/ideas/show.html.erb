@@ -4,4 +4,23 @@ Brainstorm - <%= @idea.title %><br>
 <%= @idea.group.name %><br>
 <%= @idea.fund_goal %><br><br>
 
+Comment and Collaborate: <br>
+
+<%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+
+  <%= text_area_tag :'comment[text]' %><br>
+
+  <%= submit_tag("Submit") %>
+  
+<% end %>
+<br>
+
+All Feedback >> <br><br>
+
+<% @idea.comments.each do |comment| %>
+  <%= comment.text %><br>
+  Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
+  at <%= time_of_creation(comment) %><br>
+<% end %>
+<br>
 <%= link_to 'Browse all Ideas', ideas_path %>

@@ -31,3 +31,5 @@ after you create your account, redirect to either investor#new OR inventor#new b
 helper method to determine if accountable is investor or inventor
 
 nested routes for inventor/:id/ideas
+
+
