@@ -14,17 +14,17 @@ class InventorsController < ApplicationController
     #inventor individual homepage
   end
 
-  def edit
-    @inventor = current_user.accountable
-  end
+  # def edit
+  #   @inventor = current_user.accountable
+  # end
 
-  def update
-    if @inventor.update(inventor_params)
-      redirect_to inventor_path(@inventor)
-    else  
-      render :edit
-    end  
-  end
+  # def update
+  #   if @inventor.update(inventor_params)
+  #     redirect_to inventor_path(@inventor)
+  #   else  
+  #     render :edit
+  #   end  
+  # end
 
   private
 

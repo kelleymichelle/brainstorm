@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :authenticate_user
   helper_method :inventor_account
   helper_method :investor_account
+  helper_method :dashboard_route
 
   private
 
@@ -32,6 +33,16 @@ class ApplicationController < ActionController::Base
     if current_user.accountable_type == "Investor"
       current_user.accountable
     end
+  end
+
+  #in application helper file
+  def dashboard_route
+    #determine which route to send which account based on accountable
+    if investor_account
+      investor_path(current_user.accountable)
+    else inventor_account
+      inventor_path(current_user.accountable)
+    end    
   end
 
 end

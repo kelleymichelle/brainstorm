@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   before_action :authenticate_user
   before_action :inventor_account, only: [:new]
+  
 
   before_action :find_idea, only: [:show, :update]
 
@@ -15,8 +16,12 @@ class IdeasController < ApplicationController
   end
 
   def new
-    @idea = Idea.new
-    @groups = Group.all.order(:name)
+    if !inventor_account
+      redirect_to dashboard_route
+    else  
+      @idea = Idea.new
+      @groups = Group.all.order(:name)
+    end
   end
 
   def create

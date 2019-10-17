@@ -6,6 +6,8 @@ Located in <%= @inventor.location %><br>
 
 A little about me: <%= @inventor.bio %><br>
 <br>
+Contact <%= @inventor.name %>: <%= @inventor.account.email %><br>
+<br>
 My Ideas:<br>
 
 <% @inventor.ideas.each do |idea| %>
