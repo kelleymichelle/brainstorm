@@ -14,5 +14,7 @@ My Ideas:<br>
   <br>
 <% end %>
 <br>
-<%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
+<% if @inventor == current_user %>
+  <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
+<% end %>  
 

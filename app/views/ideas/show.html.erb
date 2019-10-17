@@ -2,18 +2,22 @@ Brainstorm - <%= @idea.title %><br>
 <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %><br>
 <%= @idea.description %><br>
 <%= @idea.group.name %><br>
-<%= @idea.fund_goal %><br><br>
+$<%= @idea.fund_goal %><br><br>
 
-Comment and Collaborate: <br>
+<% if inventor_account %>
 
-<%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+    Comment and Collaborate: <br>
 
-  <%= text_area_tag :'comment[text]' %><br>
+    <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
 
-  <%= submit_tag("Submit") %>
-  
-<% end %>
-<br>
+      <%= text_area_tag :'comment[text]' %><br>
+
+      <%= submit_tag("Submit") %>
+      
+    <% end %>
+    <br>
+
+<% end %>    
 
 All Feedback >> <br><br>
 
