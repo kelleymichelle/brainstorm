@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  
   root 'welcome#index'
 
+  get 'about/invention', to: 'about#invention'
   get '/signup', to: 'accounts#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
