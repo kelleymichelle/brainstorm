@@ -15,7 +15,7 @@
  */
 
  .nav-bar {
-  background-color:grey;
+  background-color: navy;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -34,7 +34,7 @@
  }
 
  .nav-link:hover {
-   color: navy;
+   color: grey;
  }
 
  html, 
@@ -47,5 +47,27 @@
         background-size: cover;
         overflow-y: scroll;
         color: #082c6f;
-    margin: 0px;      
+    margin: 0px;  
+
+ }
+
+ .content {
+   display: flex;
+   background-color: rgba(192, 192, 192, 0.9);
+   /* width: 75%; */
+   margin-left: 20%;
+   margin-right: 20%;
+   margin-top: 60px;
+   justify-content: space-between;
+   position: relative;
+   flex-direction: row;
+
+ }
+
+ .top-title {
+
+ }
+
+ .about-inventor {
+
  }
