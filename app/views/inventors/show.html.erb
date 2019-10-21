@@ -1,25 +1,33 @@
 
-<div name="top-title">
-<h1><%= @inventor.name %></h1>
+<div class="top-title" >
+<%= @inventor.name %>
+  <% if @inventor == current_user %>
+    <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
+  <% end %> 
+  <% if @inventor == current_user %>
+    <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
+  <% end %>   
 </div>
-<div name="about-accountable">
-Located in: <%= @inventor.location %><br>
+<div class="about-accountable">
 
-About me: <%= @inventor.bio %><br>
-<br>
-Contact <%= @inventor.name %>: <%= @inventor.account.email %><br>
-<br>
-My Ideas:<br>
+  <div class="index-list">Located in: <%= @inventor.location %></div>
 
-<% @inventor.ideas.each do |idea| %>
-  <%= link_to idea.title, idea_path(idea) %> - 
-  <%= time_of_creation(idea) %>
-  <br>
-<% end %>
+  <div class="index-list">About me: <%= @inventor.bio %></div>
+
+  <div class="index-list">Contact <%= @inventor.name %>: <%= @inventor.account.email %></div>
+
+
+  <div class="idea-list">
+  My Ideas:<br><br>
+
+  <% @inventor.ideas.each do |idea| %>
+    <%= link_to idea.title, idea_path(idea) %> - 
+    <%= time_of_creation(idea) %>
+  <% end %>
+    <br>
+  </div>
 </div>
 
-<div name="if-accountable">
-<% if @inventor == current_user %>
-  <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
-<% end %>  
+<div class="if-accountable">
+
 </div>

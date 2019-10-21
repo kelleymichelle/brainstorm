@@ -1,30 +1,44 @@
-<%= @idea.title %><br>
-Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %><br>
-Decription: <%= @idea.description %><br>
-Grouping: <%= @idea.group.name %><br>
-Funding Goal: $<%= @idea.fund_goal %><br><br>
 
-<% if inventor_account %>
+<div class="top-title">
+  <%= @idea.title %>
+</div>
 
-    Comment and Collaborate: <br>
+<div class="about-accountable">
+  <div class="index-list">Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %></div>
+  <div class="index-list">Decription: <%= @idea.description %></div>
+  <div class="index-list">Grouping: <%= @idea.group.name %></div>
+  <div class="index-list">Funding Goal: $<%= @idea.fund_goal %></div>
+<%# </div>   %
 
-    <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+<%# <div class="idea-list"> %>
+  <% if inventor_account %>
 
-      <%= text_area_tag :'comment[text]' %><br>
+      Comment and Collaborate: <br>
 
-      <%= submit_tag("Submit") %>
-      
+      <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+
+        <%= text_area_tag :'comment[text]' %><br>
+
+        <%= submit_tag("Submit") %>
+        
+      <% end %>
+      <br>
+
+  <% end %>    
+
+  <%# <div class="idea-list"> %>
+  <div class="index-list"> 
+    All Feedback >>
+  </div>
+  <div class="index-list">
+    <% @idea.comments.each do |comment| %>
+      <%= comment.text %><br>
+      Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
+      at <%= time_of_creation(comment) %><br>
     <% end %>
-    <br>
-
-<% end %>    
-
-All Feedback >> <br><br>
-
-<% @idea.comments.each do |comment| %>
-  <%= comment.text %><br>
-  Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
-  at <%= time_of_creation(comment) %><br>
-<% end %>
-<br>
-<%= link_to 'Browse all Ideas', ideas_path %>
+    </div>
+  <div class="index-list">
+    <%= link_to 'Browse all Ideas', ideas_path %>
+  </div>  
+  
+</div>  

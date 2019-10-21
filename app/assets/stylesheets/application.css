@@ -15,6 +15,7 @@
  */
  @import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 
+
  .nav-bar {
   background-color: white;
   overflow: hidden;
@@ -76,39 +77,81 @@
  }
 
  .project-brainstorm {
-   font-size: 110px;
+   font-size: 95px;
    color: white;
-   margin: 25px;
+   margin: 35px;
    font-family: 'Rock Salt', cursive;
  }
 
+ /* content rendered from yield on app layout */
  .content {
-   display: flex;
-   background-color: rgba(192, 192, 192, 0.9);
+   display: grid;
+   grid-column-gap: 75px;
+   /* background-color: rgba(192, 192, 192, 0.9); */
    /* width: 75%; */
-   margin-left: 20%;
-   margin-right: 20%;
+   grid-template-columns: 450px 900px;
+   margin-left: 15%;
+   margin-right: 15%;
    margin-top: 20px;
-   justify-content: space-around;
+   justify-items: stretch;
+   /* justify-content: center; */
    position: relative;
-   flex-direction: row;
-   min-height: 70%;
+   
+   min-height: 500px;
+   /* min-width: 1000px; */
+  
    padding: 20px;
  }
 
 
  /* h1 header on pages */
- /* .top-title {
+ .top-title {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   min-width: 400px;
+   margin-top: 20px;
+   /* justify-self: center; */
+   border-top: 5px solid navy;
+   background-color: gainsboro;
+   font-family: Palatino;
+   font-size: 50px;
+}
 
- } */
+ .dash-links {
+   /* margin-top: 25px; */
+   font-size: 22px;
+ }
+
  
  /* whatever after the top title */
  .about-accountable {
-   /* margin: 40px; */
-   /* padding: 40px; */
-   flex-grow: 2;
+   /* grid-column-start: 3;
+   grid-column-end: 5; */
+   border-top: 5px solid navy;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: left;
+   margin-top: 20px;
+   /* justify-content: center; */
+   font-size: 18px;
+   font-family: Arial, Helvetica, sans-serif;
  }
 
+ .index-list {
+
+ }
+
+ .about-2 {
+
+ }
+
+ /* inventor show page ideas list */
+ .idea-list {
+   margin-top: 40px;
+ }
 
  .if-accountable {
    display: flex;

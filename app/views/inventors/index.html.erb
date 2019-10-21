@@ -1,8 +1,8 @@
-<div name="top-title">
-<h1>All Inventors</h1>
+<div class="top-title">
+  All Inventors
 </div>
-<div name="about-accountable">
-<% @inventors.each do |inventor| %>
-  <%= link_to inventor.name, inventor_path(inventor) %><br>
-<% end %>
+<div class="about-accountable">
+  <% @inventors.each do |inventor| %>
+    <div class="index-list"><%= link_to inventor.name, inventor_path(inventor) %></div>
+  <% end %>
 </div>

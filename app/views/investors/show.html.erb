@@ -1,12 +1,18 @@
-<div name="top-title">
-<h1><%= @investor.name %></h1>
-<%= link_to 'View Ideas', ideas_path %><br>
-<%= link_to 'Inventors', inventors_path %>
-</div>
-<div name='about-accountable'>
-Located in <%= @investor.location %><br>
+<div class="top-title">
+  <%= @investor.name %>
+    <div class="dash-links">
+    <%= link_to 'View Ideas', ideas_path %><br>
+    <%= link_to 'Inventors', inventors_path %>
+    </div>
 
-A little about what I do: <%= @investor.bio %><br>
+</div>
+<div class="about-accountable">
+  Located in: <%= @investor.location %><br>
+
+  <div class="index-list">
+    A little about what I do: <%= @investor.bio %><br>
+  </div>
+
 
 </div>
 

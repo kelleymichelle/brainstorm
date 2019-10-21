@@ -1,10 +1,10 @@
-<div name="top-title">
-<h1>All Current Ideas</h1>
+<div class="top-title">
+  All Current Ideas
 </div>
-<div name="about-accountable">
-<% @ideas.each do |idea| %>
-  <%= link_to idea.title, idea_path(idea) %> -
-  <%= idea.description %> -
-  <%= link_to idea.inventor.name, inventor_path(idea.inventor) %>
-<% end %> 
+<div class="about-accountable">
+  <% @ideas.each do |idea| %>
+    <div class="index-list"><%= link_to idea.title, idea_path(idea) %></div>
+    <div class="index-list">Description: <%= idea.description %></div>
+    <div class="index-list">Inventor: <%= link_to idea.inventor.name, inventor_path(idea.inventor) %></div>
+  <% end %> 
 </div> 
