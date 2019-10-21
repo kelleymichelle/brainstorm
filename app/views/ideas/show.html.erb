@@ -11,22 +11,22 @@
 <%# </div>   %
 
 <%# <div class="idea-list"> %>
-  <% if inventor_account %>
+  <div class="index-list">
+    <% if inventor_account %>
 
-      Comment and Collaborate: <br>
+        Comment and Collaborate: <br>
 
-      <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+        <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
 
-        <%= text_area_tag :'comment[text]' %><br>
+          <%= text_area_tag :'comment[text]' %><br>
 
-        <%= submit_tag("Submit") %>
-        
-      <% end %>
-      <br>
+          <%= submit_tag("Submit") %>
+          
+        <% end %>
+    <% end %>    
+  </div>
 
-  <% end %>    
 
-  <%# <div class="idea-list"> %>
   <div class="index-list"> 
     All Feedback >>
   </div>
@@ -40,5 +40,5 @@
   <div class="index-list">
     <%= link_to 'Browse all Ideas', ideas_path %>
   </div>  
-  
+
 </div>  
