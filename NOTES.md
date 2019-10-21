@@ -33,3 +33,6 @@ helper method to determine if accountable is investor or inventor
 nested routes for inventor/:id/ideas
 
 
+ /*  */
+
+ style="background-image: url('silouette_interface.jpeg');
