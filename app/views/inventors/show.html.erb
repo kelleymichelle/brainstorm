@@ -2,14 +2,13 @@
 <div name="top-title">
 <h1><%= @inventor.name %></h1>
 </div>
-<div name="about-inventor">
+<div name="about-accountable">
 Located in: <%= @inventor.location %><br>
 
 About me: <%= @inventor.bio %><br>
 <br>
 Contact <%= @inventor.name %>: <%= @inventor.account.email %><br>
 <br>
-</div>
 My Ideas:<br>
 
 <% @inventor.ideas.each do |idea| %>
@@ -17,8 +16,10 @@ My Ideas:<br>
   <%= time_of_creation(idea) %>
   <br>
 <% end %>
-<br>
+</div>
+
+<div name="if-accountable">
 <% if @inventor == current_user %>
   <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
 <% end %>  
-
+</div>

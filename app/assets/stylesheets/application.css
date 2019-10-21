@@ -50,6 +50,8 @@
     margin: 0px;  
 
  }
+  
+ /* content renders yield from layout */
 
  .content {
    display: flex;
@@ -58,16 +60,28 @@
    margin-left: 20%;
    margin-right: 20%;
    margin-top: 60px;
-   justify-content: space-between;
+   justify-content: space-around;
    position: relative;
    flex-direction: row;
-
+   min-height: 70%;
+   padding: 20px;
  }
 
+
+ /* h1 header on pages */
  .top-title {
 
  }
+ 
+ /* whatever after the top title */
+ .about-accountable {
+   /* margin: 40px; */
+   /* padding: 40px; */
+   flex-grow: 2;
+ }
 
- .about-inventor {
 
+ .if-accountable {
+   display: flex;
+   justify-content: flex-end;
  }

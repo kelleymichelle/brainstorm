@@ -1,10 +1,15 @@
-Investor show page<br>
-
-<%= @investor.name %><br>
-
+<div name="top-title">
+<h1><%= @investor.name %></h1>
+<%= link_to 'View Ideas', ideas_path %><br>
+<%= link_to 'Inventors', inventors_path %>
+</div>
+<div name='about-accountable'>
 Located in <%= @investor.location %><br>
 
 A little about what I do: <%= @investor.bio %><br>
 
-<%= link_to 'View Ideas', ideas_path %>
-<%= link_to 'Inventors', inventors_path %>
+</div>
+
+<div name="if-accountable">
+
+</div>

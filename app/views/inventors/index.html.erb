@@ -1,5 +1,8 @@
-All Inventors
-<br><br>
+<div name="top-title">
+<h1>All Inventors</h1>
+</div>
+<div name="about-accountable">
 <% @inventors.each do |inventor| %>
-  <%= inventor.name %><br>
+  <%= link_to inventor.name, inventor_path(inventor) %><br>
 <% end %>
+</div>
