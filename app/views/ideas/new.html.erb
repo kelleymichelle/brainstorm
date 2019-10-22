@@ -1,22 +1,33 @@
-<div name="top-title">
-<h1>What are you thinking about? </h1>
+<div class="top-title">
+  What are you <br>
+  thinking about?
 </div>
-<div name="about-accountable">
-<%= form_for(@idea) do |f|  %>
+  <div class="about-accountable">
+  <%= form_for(@idea) do |f|  %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="index-list">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div class="index-list">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>  
 
-  <%= f.label :group %>
-  <%= f.collection_select :group_id, Group.order(:name), :id, :name, include_blank: true %>
+  <div class="index-list">
+    <%= f.label :group %>
+    <%= f.collection_select :group_id, Group.order(:name), :id, :name, include_blank: true %>
+  </div>
 
-  <%= f.label :fund_goal, "Funding Goal" %>
-  <%= f.text_field :fund_goal %>
+  <div class="index-list">
+    <%= f.label :fund_goal, "Funding Goal" %>
+    <%= f.text_field :fund_goal %>
+  </div>
 
-  <%= f.submit "Brainstorm!" %>
+  <div class="index-list">
+    <%= f.submit "Brainstorm!" %>
+  </div>  
 
 <% end%>
 </div>

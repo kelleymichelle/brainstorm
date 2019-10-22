@@ -23,7 +23,7 @@ class InventorsController < ApplicationController
     @inventor = Inventor.new(inventor_params)
     @inventor.account = Account.find(session[:account_id])
     if @inventor.save!
-       redirect_to inventor_path(@inv)
+       redirect_to inventor_path(@inventor)
     else  
       render :new
      end  

@@ -1,3 +1,10 @@
+TODO-
+  -get signup working PROPERLY
+  -omniauth
+  -refactor
+  -partials
+
+
 # Create an Accounts table
 - in db it will have:
 - password_digest
