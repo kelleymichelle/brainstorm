@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
         session[:account_id] = @account.id
         session[:accountable_type] = params[:accountable_type]
         
-        if is_inventor?
+        if inventor_account
           redirect_to inventor_path(@account.accountable)
-        else is_investor?
+        else investor_account
           redirect_to investor_path(@account.accountable)  
         end  
     else

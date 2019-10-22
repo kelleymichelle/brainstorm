@@ -5,14 +5,31 @@ class InventorsController < ApplicationController
 
   before_action :find_inventor, only: [:show, :update]
 
+  def show
+    #inventor individual homepage
+  end
 
   def index
     @inventors = Inventor.all
   end
 
-  def show
-    #inventor individual homepage
+  def new
+    # current_user.accountable = Inventor.new
+    @inventor = Inventor.new
   end
+
+  def create
+    # raise params.inspect
+    @inventor = Inventor.new(inventor_params)
+    @inventor.account = Account.find(session[:account_id])
+    if @inventor.save!
+       redirect_to inventor_path(@inv)
+    else  
+      render :new
+     end  
+  end  
+
+  
 
   # def edit
   #   @inventor = current_user.accountable

@@ -34,5 +34,3 @@ nested routes for inventor/:id/ideas
 
 
  /*  */
-
- style="background-image: url('silouette_interface.jpeg');

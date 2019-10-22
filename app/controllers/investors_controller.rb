@@ -13,6 +13,18 @@ class InvestorsController < ApplicationController
     #individual show page
   end
 
+  def new
+    current_user.accountable = Investor.new
+    @investor = current_user.accountable
+  end
+
+
+  def create
+    raise params.inspect
+  end
+
+  
+
   def edit
     @investor = current_user.accountable
   end
