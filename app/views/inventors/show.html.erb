@@ -3,10 +3,7 @@
 <%= @inventor.name %>
   <% if @inventor == current_user %>
     <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
-  <% end %> 
-  <% if @inventor == current_user %>
-    <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>
-  <% end %>   
+  <% end %>  
 </div>
 <div class="about-accountable">
 

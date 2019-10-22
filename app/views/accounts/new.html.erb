@@ -1,24 +1,46 @@
-Create Account
+<div class="top-title">
+  Create Account
+</div>  
 <%# Create Account: Are you an Inventor or an Investor? %>
-<%= form_for(@account) do |f| %>
-  
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%# <%= error_msg_for(@account, :username).html_safe %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%# <%= error_msg_for(@account, :email).html_safe %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%# <%= error_msg_for(@account, :password).html_safe %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%# <%= error_msg_for(@account, :password_confirmation).html_safe %>
-  <%= f.label :inventor, "Inventor" %>
-  <%= f.radio_button :accountable_type, 'inventor' %>
-  <%= f.label :investor, "Investor" %>
-  <%= f.radio_button :accountable_type, 'investor' %>
+<div class="about-accountable">
+  <%= form_for(@account) do |f| %>
+    
+    <div class="index-list">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <%# <%= error_msg_for(@account, :username).html_safe %>
+    <div class="index-list">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <%# <%= error_msg_for(@account, :email).html_safe %>
+    <div class="index-list">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>  
+    <%# <%= error_msg_for(@account, :password).html_safe %>
+    <div class="index-list">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>  
+    <%# <%= error_msg_for(@account, :password_confirmation).html_safe %>
+    <div class="index-list">
+      <%= f.label :inventor, "Inventor" %>
+      <%= f.radio_button :accountable_type, 'inventor' %>
+      <%= f.label :investor, "Investor" %>
+      <%= f.radio_button :accountable_type, 'investor' %>
+    </div>
 
-  <%= f.submit "Get stormin'" %>
+    <div class="index-list">
+      <%= f.submit "Get stormin'" %>
+    </div>  
 
-<% end %>
+  <% end %>
+
+  <div class="index-list">
+    <center>
+      <%= image_tag("paper-light.png", style:'width:50%') %>
+    </center>
+  </div>
+</div>

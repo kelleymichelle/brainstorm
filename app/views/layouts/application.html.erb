@@ -7,17 +7,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path('brainstorm_favicon.png'), :rel => 'icon', :type => "image/png" %>
+    <%= favicon_link_tag asset_path('brain-light.jpg'), :rel => 'icon', :type => "image/png" %>
   </head>
   <div class="nav-bar">
 
   <div class="nav-link" >
-                <a href="/"><%= image_tag "lightbulb-logo.jpg", height: "60" %></a>
+                <a href="/"><%= image_tag "brain-light.jpg", height: "60" %></a>
               </div>
 
   <% if logged_in? %>
     <%= link_to 'My Dashboard', dashboard_route, class: "nav-link" %>
+    <%= link_to 'View Ideas', ideas_path, class: "nav-link" %>
+    <%= link_to 'Inventors', inventors_path, class: "nav-link" %>
     <%= link_to 'About Invention', about_invention_path, class: "nav-link" %>
+    <%= link_to 'Types of Invention', groups_path, class: "nav-link" %>
     <%= link_to 'Log Out', logout_path, class: "nav-link" %>
   <% else %> 
     <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
