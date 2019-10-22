@@ -11,6 +11,22 @@ class Account < ApplicationRecord
 
   belongs_to :accountable, :polymorphic => true
   
+  def self.find_or_create_by_omniauth(auth_hash)        
+    account = self.find_or_create_by(:uid => auth_hash[:uid]) do |a|
+        a.username = auth_hash[:info][:name]
+        a.email = auth_hash[:info][:email]
+        a.password = SecureRandom.hex 
+    end
+end
+
+  # def self.from_google(auth)
+  #   # Creates a new user only if it doesn't exist
+  #   where(email: auth.info.email).first_or_initialize do |account|
+  #     account.name = auth.info.name
+  #     account.email = auth.info.email
+  #   end
+  # end
+
   # def self.is_inventor=(arg)
   #   self.inventor = arg
   # end

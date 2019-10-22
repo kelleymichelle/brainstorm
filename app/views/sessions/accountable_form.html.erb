@@ -1,0 +1,15 @@
+<div class="top-title">
+ Are you an Inventor or an Investor?
+</div>
+
+<div class="index-list">
+  <%= form_tag 'accounts#create' do %>
+
+    <%= radio_button_tag :inventor  %>
+    <%= radio_button_tag :investor  %>
+
+    <%= submit_tag("Submit") %>
+
+  <% end %>
+
+</div>

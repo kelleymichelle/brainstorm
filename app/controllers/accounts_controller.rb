@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    # byebug
+    byebug
     @account = Account.new(account_params)
       if @account.accountable_type == "Inventor"
         @account.accountable = Inventor.new
@@ -31,13 +31,16 @@ class AccountsController < ApplicationController
     #     flash[:danger] = "Oops! There was trouble making your acount."
         render 'new'
     end
+  end
+
+  def update
 
   end
 
   private
 
   def account_params
-    params.require(:account).permit(:username, :email, :password, :password_confirmation, :accountable_type)
+    params.require(:account).permit(:username, :email, :password, :password_confirmation, :accountable_type, :uid)
   end
 
 end

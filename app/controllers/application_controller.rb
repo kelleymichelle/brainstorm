@@ -6,11 +6,20 @@ class ApplicationController < ActionController::Base
   helper_method :inventor_account
   helper_method :investor_account
   helper_method :dashboard_route
+  helper_method :log_in
+  helper_method :new_accountable
 
   private
 
   def current_user
     Account.find_by(id: session[:account_id])
+  end
+
+  def log_in(account)
+    session[:account_id] = account.id
+    session[:accountable_type] = account.accountable_type
+    session[:accountable] = account.inventor | account.investor
+    redirect_to dashboard_route
   end
 
   def logged_in?
@@ -37,12 +46,20 @@ class ApplicationController < ActionController::Base
 
   #in application helper file
   def dashboard_route
-    #determine which route to send which account based on accountable
     if investor_account
       investor_path(current_user.accountable)
     else inventor_account
       inventor_path(current_user.accountable)
     end    
+  end
+
+  def new_accountable?(act)
+    # act = session[:account]
+    if act.accountable == nil
+      render 'sessions/accountable_form'
+    else
+      log_in(act)  
+    end  
   end
 
 end

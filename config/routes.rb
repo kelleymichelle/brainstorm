@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
+  get '/auth/facebook/callback' => 'sessions#create'
+  # get '/auth/failure', to: redirect('/'), via: [:get, :post]
+  
+
+  # get 'auth/google-oauth2/callback', to: 'sessions#googleAuth'
+  # get 'auth/failure', to: redirect('/')
+
   post '/ideas/:id/comments/new', to: 'comments#create'
 
   resources :inventors do

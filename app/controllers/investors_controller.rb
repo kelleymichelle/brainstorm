@@ -5,22 +5,29 @@ class InvestorsController < ApplicationController
 
   before_action :find_investor, only: [:show, :update]
 
-  def index
-    @investors = Investor.all
-  end
 
   def show
     #individual show page
   end
 
+  def index
+    @investors = Investor.all
+  end
+
   def new
-    current_user.accountable = Investor.new
-    @investor = current_user.accountable
+    @investor = Investor.new
   end
 
 
   def create
-    raise params.inspect
+    
+    @investor = Investor.new(investor_params)
+    @investor.account = Account.find(session[:account_id])
+    if @investor.save!
+      redirect_to investor_path(@investor)
+    else
+      render :new
+    end  
   end
 
   

@@ -3,6 +3,9 @@ TODO-
   -omniauth
   -refactor
   -partials
+  -picture and default picture?
+  -all ideas show page
+
 
 
 # Create an Accounts table
@@ -41,3 +44,11 @@ nested routes for inventor/:id/ideas
 
 
  /*  */
+
+ google client ID:
+
+ 146328960688-topfdksrl4da7k035vlrp6uma9to9vds.apps.googleusercontent.com
+
+ google client secret:
+
+ ldRL9gKQBU1Xg3N9WGSfAbVb

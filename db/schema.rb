@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_171657) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "uid"
     t.string "accountable_type"
     t.integer "accountable_id"
     t.datetime "created_at", precision: 6, null: false
