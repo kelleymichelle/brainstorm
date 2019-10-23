@@ -11,6 +11,9 @@
 <%# </div>   %
 
 <%# <div class="idea-list"> %>
+  
+  
+  
   <div class="index-list">
     <% if inventor_account %>
 
@@ -31,8 +34,8 @@
       <div class="comment-list"> 
         All Feedback >>
       </div>
-      <div class="comment-list">
         <% @idea.comments.each do |comment| %>
+      <div class="comment-list">
           <%= comment.text %><br>
           Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
           at <%= time_of_creation(comment) %><br>

@@ -1,12 +1,12 @@
-TODO-
-  -get signup working PROPERLY
-  -omniauth
-  -refactor
-  -partials
-  -picture and default picture?
-  -all ideas show page
+# To Do as of 10/23
 
+- idea show page: allow investors to save/fund ideas to fulfill investor has many ideas thorugh inventors etc. Maybe option to follow an inventor?
 
+- refactor code and create partials
+
+- error messages
+
+- accountable picture and default picture?
 
 # Create an Accounts table
 - in db it will have:
@@ -38,17 +38,3 @@ after you create your account, redirect to either investor#new OR inventor#new b
 @inventor = Inventor.new(inventor_params)
 @inventor.account = Account.find(session[:account_id])
 
-helper method to determine if accountable is investor or inventor
-
-nested routes for inventor/:id/ideas
-
-
- /*  */
-
- google client ID:
-
- 146328960688-topfdksrl4da7k035vlrp6uma9to9vds.apps.googleusercontent.com
-
- google client secret:
-
- ldRL9gKQBU1Xg3N9WGSfAbVb

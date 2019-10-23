@@ -17,17 +17,17 @@
   <div class="index-list">Contact <%= @inventor.name %>: <%= @inventor.account.email %></div>
 
 
-  <div class="idea-list">
-  My Ideas:<br><br>
-
+  <div class="comment-container">
+    <div class="comment-list">
+    My Ideas:
+    </div>
   <% @inventor.ideas.each do |idea| %>
+    <div class="comment-list">
     <%= link_to idea.title, idea_path(idea) %> - 
     <%= time_of_creation(idea) %>
+    </div>
   <% end %>
-    <br>
+    
+  
   </div>
-</div>
-
-<div class="if-accountable">
-
 </div>
