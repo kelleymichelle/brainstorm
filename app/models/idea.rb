@@ -9,5 +9,11 @@ class Idea < ApplicationRecord
   validates :description, presence: true, length: { maximum: 1000 }
   validates :fund_goal, presence: true
   validates :group, presence: true
+
+
+  def find_favorite(idea)
+    @investor.ideas.where(id: self.id)
+  end
+
   
 end

@@ -9,7 +9,7 @@ Favorite Ideas:
     <div class="index-list">
       Idea: <%= idea.title %><br>
       Inventor: <%= idea.inventor.name %><br>
-      Add Note
+      <%= link_to "Add Note", edit_investor_idea_favorite_path(@investor, idea, idea) %>
     </div>
   <% end %>  
 

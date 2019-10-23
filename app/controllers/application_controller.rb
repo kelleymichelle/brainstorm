@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :dashboard_route
   helper_method :log_in
   helper_method :new_accountable
+  helper_method :find_favorite
 
   private
 
@@ -61,6 +62,10 @@ class ApplicationController < ActionController::Base
     else
       log_in(act)  
     end  
+  end
+
+  def find_favorite(idea_id)
+    investor_account.favorites.where(idea_id: idea_id)
   end
 
 end

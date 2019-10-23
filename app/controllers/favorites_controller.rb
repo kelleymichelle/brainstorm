@@ -25,5 +25,16 @@ class FavoritesController < ApplicationController
     redirect_to idea_path(@idea)
   end
 
+  def edit
+    # raise params.inspect
+    # byebug
+    @idea = Idea.find(params[:idea_id])
+    @favorite = find_favorite(@idea)
+  end
+
+  def update
+
+  end
+
 
 end
