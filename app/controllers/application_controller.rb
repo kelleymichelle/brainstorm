@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def log_in(account)
     session[:account_id] = account.id
     session[:accountable_type] = account.accountable_type
-    session[:accountable] = account.inventor | account.investor
+    session[:accountable] = account.accountable
     redirect_to dashboard_route
   end
 

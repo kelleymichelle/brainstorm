@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
       end  
     end
 
+    # byebug
+      @account = Account.find_by(username: params[:username])
       if @account && @account.authenticate(params[:password])
         log_in(@account) and return
           

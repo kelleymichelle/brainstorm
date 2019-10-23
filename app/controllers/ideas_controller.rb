@@ -2,10 +2,7 @@ class IdeasController < ApplicationController
   before_action :authenticate_user
   before_action :inventor_account, only: [:new]
   
-
   before_action :find_idea, only: [:show, :update]
-
-  # before_action :find_inventor
 
   def index
     @ideas = Idea.all
@@ -25,8 +22,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    # raise params.inspect
-    # byebug
+    
     @idea = inventor_account.ideas.build(idea_params)
     if @idea.save!
       redirect_to inventor_idea_path(inventor_account, @idea), notice: "Brainstorm!"
@@ -44,9 +40,5 @@ class IdeasController < ApplicationController
   def find_idea
     @idea = Idea.find(params[:id])
   end
-
-  # def find_inventor
-  #   @inventor = Inventor = Inventor.find(params[:id])
-  # end
 
 end

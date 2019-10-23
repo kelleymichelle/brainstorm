@@ -3,19 +3,13 @@ class CommentsController < ApplicationController
   before_action :authenticate_user
   before_action :find_idea
 
-  # def new
-
-  # end
-
   def create
-    # byebug
-    # raise params.inspect
+  
     @comment = @idea.comments.build(comment_params)
     @comment.inventor = inventor_account
     if @comment.save!
       redirect_to idea_path(@comment.idea)
-    # else
-      
+  
     end
   end
 

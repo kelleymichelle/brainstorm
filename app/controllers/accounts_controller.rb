@@ -5,16 +5,16 @@ class AccountsController < ApplicationController
   end
 
   def create
-    # byebug
+    
     @account = Account.new(account_params)
       if @account.accountable_type == "Inventor"
         @account.accountable = Inventor.new
       else @account.accountable_type == "Investor"
         @account.accountable = Investor.new  
       end  
-      # byebug
+      
     if @account.save!
-      # byebug
+      
         session[:account_id] = @account.id
         session[:accountable_type] = @account.accountable_type
         session[:accountable_id] = @account.accountable.id
@@ -34,7 +34,7 @@ class AccountsController < ApplicationController
   end
 
   def create_from_fb
-    # byebug
+    
     @account = Account.new(session[:account])
     @account.accountable_type = params[:account][:accountable_type]
     if @account.accountable_type == "Inventor"
