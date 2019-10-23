@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :favorites
   root 'welcome#index'
 
   get 'about/invention', to: 'about#invention'
@@ -12,6 +13,10 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/sessions/accountable_form', to: 'sessions#accountable_form'
   post '/sessions/accountable_form', to: 'accounts#create_from_fb'
+
+  post '/investors/:investor_id/ideas/:idea_id/favorites/new', to: 'favorites#create'
+  match 'unfavorite', to: 'favorites#unfavorite', via: :delete
+  # patch '/investors/:investor_id/ideas/:id', to: 'investors#add_to_favorites'
 
   # get '/auth/failure', to: redirect('/'), via: [:get, :post]
   
@@ -26,8 +31,11 @@ Rails.application.routes.draw do
   end
   
   resources :investors do
-    resources :ideas
-  end
+    resources :ideas do
+      resources :favorites
+    end  
+  end  
+  
 
   resources :ideas do
     resources :comments

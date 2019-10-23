@@ -8,18 +8,17 @@
   <div class="index-list">Decription: <%= @idea.description %></div>
   <div class="index-list">Grouping: <%= @idea.group.name %></div>
   <div class="index-list">Funding Goal: $<%= @idea.fund_goal %></div>
-<%# </div>   %
 
-<%# <div class="idea-list"> %>
-  
-  
+  <div class="favorite">
+      <%= render partial: "favorites/button" %>
+  </div>    
   
   <div class="index-list">
     <% if inventor_account %>
 
         Comment and Collaborate: <br>
 
-        <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
+        <%= form_tag new_idea_comment_path(@idea), :method => :patch do %>
 
           <%= text_area_tag :'comment[text]' %><br>
 

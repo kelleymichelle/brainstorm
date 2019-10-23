@@ -18,7 +18,6 @@ class InvestorsController < ApplicationController
     @investor = Investor.new
   end
 
-
   def create
     
     @investor = Investor.new(investor_params)
@@ -30,6 +29,10 @@ class InvestorsController < ApplicationController
     end  
   end
 
+  # def add_to_favorites
+  #   byebug
+  #   raise params.inspect
+  # end
   
 
   def edit

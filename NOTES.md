@@ -8,6 +8,22 @@
 
 - accountable picture and default picture?
 
+   <div class="favorite">
+    <% if investor_account %>
+
+        Fund this Idea 
+
+        <%= form_tag '/investors/:investor_id/ideas/:id'(investor_account, @idea), :method => :put do %>
+
+          <%= check_box_tag :funded %><br>
+
+          <%= submit_tag("Submit") %>
+          
+        <% end %>
+    <% end %>    
+  </div>
+
+
 # Create an Accounts table
 - in db it will have:
 - password_digest
