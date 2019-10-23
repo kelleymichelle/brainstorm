@@ -1,6 +1,6 @@
 # To Do as of 10/23
 
-- idea show page: allow investors to save/fund ideas to fulfill investor has many ideas thorugh inventors etc. Maybe option to follow an inventor?
+- allow investors to add notes to a favorited idea
 
 - refactor code and create partials
 

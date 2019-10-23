@@ -1,9 +1,9 @@
 <% if investor_account.favorite?(@idea) %>
 
-  <%= link_to "Unfavorite", unfavorite_path(idea_id: @idea), method: :delete %>
+  <%= link_to "Stop Funding this Idea", unfavorite_path(idea_id: @idea), method: :delete %>
 
 <% else %>
 
-  <%= link_to "Favorite", new_investor_idea_favorite_path(investor_account, @idea), method: :post %>
+  <%= link_to "Fund this Idea", new_investor_idea_favorite_path(investor_account, @idea), method: :post %>
 
 <% end %>

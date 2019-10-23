@@ -5,8 +5,12 @@
 
 <div class="about-accountable">
 Favorite Ideas:
-
-  <div class="index-list">
-  </div>
+  <% @investor.ideas.each do |idea| %>
+    <div class="index-list">
+      Idea: <%= idea.title %><br>
+      Inventor: <%= idea.inventor.name %><br>
+      Add Note
+    </div>
+  <% end %>  
 
 </div>
