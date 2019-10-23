@@ -2,9 +2,13 @@
   All Current Ideas
 </div>
 <div class="about-accountable">
-  <% @ideas.each do |idea| %>
-    <div class="index-list"><%= link_to idea.title, idea_path(idea) %></div>
-    <div class="index-list">Description: <%= idea.description %></div>
-    <div class="index-list">Inventor: <%= link_to idea.inventor.name, inventor_path(idea.inventor) %></div>
-  <% end %> 
+
+      <% @ideas.each do |idea| %>
+    <div class="index-list">
+        <%= link_to idea.title, idea_path(idea) %><br>
+        Description: <%= idea.description %><br>
+        Inventor: <%= link_to idea.inventor.name, inventor_path(idea.inventor) %>
+    </div>  
+      <% end %> 
+
 </div> 
