@@ -26,19 +26,22 @@
     <% end %>    
   </div>
 
+<div class="comment-container">
 
-  <div class="index-list"> 
-    All Feedback >>
+      <div class="comment-list"> 
+        All Feedback >>
+      </div>
+      <div class="comment-list">
+        <% @idea.comments.each do |comment| %>
+          <%= comment.text %><br>
+          Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
+          at <%= time_of_creation(comment) %><br>
+        <% end %>
+        </div>
   </div>
-  <div class="comment-list">
-    <% @idea.comments.each do |comment| %>
-      <%= comment.text %><br>
-      Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>
-      at <%= time_of_creation(comment) %><br>
-    <% end %>
-    </div>
-  <div class="index-list">
-    <%= link_to 'Browse all Ideas', ideas_path %>
-  </div>  
+      <div class="index-list">
+        <%= link_to 'Browse all Ideas', ideas_path %>
+      </div>  
+
 
 </div>  

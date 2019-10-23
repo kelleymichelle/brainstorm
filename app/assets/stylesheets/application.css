@@ -163,10 +163,17 @@
   margin: 20px;
  }
 
- .comment-list {
+ .comment-container {
+   justify-content: space-around;
+   padding: 25px;
    margin: 20px;
    font-size: 15px;
+   background-color: rgba(167, 215, 230, 0.3);
    /* border: 5px solid navy; */
+ }
+
+ .comment-list {
+   padding: 8px;
  }
 
  .about-2 {
