@@ -163,6 +163,12 @@
   margin: 20px;
  }
 
+ .comment-list {
+   margin: 20px;
+   font-size: 15px;
+   /* border: 5px solid navy; */
+ }
+
  .about-2 {
 
  }

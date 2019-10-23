@@ -30,7 +30,7 @@
   <div class="index-list"> 
     All Feedback >>
   </div>
-  <div class="index-list">
+  <div class="comment-list">
     <% @idea.comments.each do |comment| %>
       <%= comment.text %><br>
       Feedback by: <%= link_to comment.inventor.name, inventor_path(comment.inventor) %><br>

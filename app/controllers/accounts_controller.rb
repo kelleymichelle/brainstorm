@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    byebug
+    # byebug
     @account = Account.new(account_params)
       if @account.accountable_type == "Inventor"
         @account.accountable = Inventor.new
