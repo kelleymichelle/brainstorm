@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   get '/auth/facebook/callback' => 'sessions#create'
+  get '/sessions/accountable_form', to: 'sessions#accountable_form'
+  post '/sessions/accountable_form', to: 'accounts#create_from_fb'
+
   # get '/auth/failure', to: redirect('/'), via: [:get, :post]
   
 

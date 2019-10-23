@@ -56,7 +56,8 @@ class ApplicationController < ActionController::Base
   def new_accountable?(act)
     # act = session[:account]
     if act.accountable == nil
-      render 'sessions/accountable_form'
+      # render 'sessions/accountable_form'
+      redirect_to sessions_accountable_form_path
     else
       log_in(act)  
     end  

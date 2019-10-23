@@ -2,13 +2,22 @@
  Are you an Inventor or an Investor?
 </div>
 
-<div class="index-list">
-  <%= form_tag 'accounts#create' do %>
+<div class="about_accountable">
+    <%= form_tag sessions_accountable_form_path, :method => :post do %>
 
-    <%= radio_button_tag :inventor  %>
-    <%= radio_button_tag :investor  %>
+      <div class="index-list">
+        <%= label_tag :Inventor %>
+        <%= radio_button_tag 'account[accountable_type]', :Inventor  %>
+      </div>  
 
-    <%= submit_tag("Submit") %>
+      <div class="index-list">
+        <%= label_tag :Investor %>
+        <%= radio_button_tag 'account[accountable_type]', :Investor  %>
+      </div>
+
+      <div class="index-list">
+        <%= submit_tag("Submit") %>
+      </div>  
 
   <% end %>
 

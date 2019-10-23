@@ -41,6 +41,10 @@ class SessionsController < ApplicationController
   end     
 # end
 
+def accountable_form
+
+end
+
 def destroy
     session.clear
     redirect_to '/'
