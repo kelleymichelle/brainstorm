@@ -16,11 +16,6 @@ class Investor < ApplicationRecord
     self.favorites.build(idea_id: idea.id).save
   end
 
-  # def unfavorite!(user)
-  #   fav = user.favorites.find_by_idea_id(idea.id)
-  #   fav.destroy!
-  # end
-
   def favorite?(idea)
     self.favorites.find_by_idea_id(idea.id)
   end

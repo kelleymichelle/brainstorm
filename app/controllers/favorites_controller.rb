@@ -1,5 +1,11 @@
 class FavoritesController < ApplicationController
+
+  # before_action :find_investor
   # respond_to :js
+
+  def index
+    @investor = investor_account
+  end
 
   def create
     # byebug

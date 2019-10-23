@@ -4,4 +4,5 @@ class Favorite < ApplicationRecord
   # has_many :investors
 
   validates :investor_id, uniqueness: { scope: :idea_id }
+  
 end
