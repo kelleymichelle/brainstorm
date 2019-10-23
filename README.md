@@ -1,25 +1,23 @@
-# README
+# PROJECT BRAINSTORM
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web application using Ruby on Rails and ActiveRecord.
 
-Things you may want to cover:
+## Table of Contents
+-Description
+-Technologies
+-Setup
+-Resources
+-License
 
-* Ruby version
+### Description
 
-* System dependencies
+Simple web application for Inventors to create and post ideas for Investors to view and/or decide to fund. Inventors can also comment/ collaborate on ideas.
 
-* Configuration
+### Technologies
 
-* Database creation
+### Setup
 
-* Database initialization
+### Resources
 
-* How to run the test suite
+### License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# brainstorm
