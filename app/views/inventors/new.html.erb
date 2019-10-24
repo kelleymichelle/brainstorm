@@ -2,29 +2,4 @@
   Welcome Inventor! Please tell us more about yourself!
 </div>
 
-<div class="about-accountable">
-
-  <%= render partial: "flash_messages/errors" %>
-
-  <%= form_for(@inventor) do |f| %>
-
-  <div class="index-list">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>  
-
-    <div class="index-list">
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-    </div>  
-
-    <div class="index-list">
-      <%= f.label :bio %>
-      <%= f.text_area :bio %>
-    </div>
-
-    <div class="index-list">
-      <%= f.submit "Submit" %>
-    </div>  
-  <% end %>  
-</div>
+  <%= render 'form' %>
