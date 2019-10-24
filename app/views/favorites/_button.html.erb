@@ -1,12 +1,16 @@
-<% if investor_account.favorite?(@idea) %>
+<% if investor_account %>
+
+  <% if investor_account.favorite?(@idea) %>
 
 
-  <div class="fav-link"><%= image_tag("bulb-on.jpg", style:'width:38%') %></div>
-  <div class="fav-link"><%= link_to "Stop Funding this Idea", unfavorite_path(idea_id: @idea), method: :delete %></div>
+    <div class="fav-link"><%= image_tag("bulb-on.jpg", style:'width:38%') %></div>
+    <div class="fav-link"><%= link_to "Stop Funding this Idea", unfavorite_path(idea_id: @idea), method: :delete %></div>
 
-<% else %>
+  <% else %>
 
-  <div class="fav-link"><%= image_tag("bulb-off.jpg", style:'width:30%') %></div>
-  <div class="fav-link"><%= link_to "Fund this Idea", new_investor_idea_favorite_path(investor_account, @idea), method: :post %></div>
+    <div class="fav-link"><%= image_tag("bulb-off.jpg", style:'width:30%') %></div>
+    <div class="fav-link"><%= link_to "Fund this Idea", new_investor_idea_favorite_path(investor_account, @idea), method: :post %></div>
+
+  <% end %>
 
 <% end %>

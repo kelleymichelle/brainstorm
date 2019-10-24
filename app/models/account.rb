@@ -4,7 +4,7 @@ class Account < ApplicationRecord
 
   validates :username, presence: true
   # validates :password_confirmation, presence: true, on: :create
-  # validates :password, if: :setting_password?
+  validates :password, presence: true, if: :setting_password?
   validates :email, presence: true, length: { minimum: 5 }
   validates :email, uniqueness: { case_sensitive: false }
   # validate :email_must_be_valid

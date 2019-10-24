@@ -13,13 +13,13 @@ class AccountsController < ApplicationController
         @account.accountable = Investor.new  
       end  
       
-    if @account.save!
+    if @account.save
       
         session[:account_id] = @account.id
         session[:accountable_type] = @account.accountable_type
         session[:accountable_id] = @account.accountable.id
       
-        # flash[:success] = "Welcome #{@account.username}!"
+        
         if @account.accountable_type == "Inventor"
           # @account.accountable = Inventor.new
           redirect_to new_inventor_path
@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
           redirect_to new_investor_path
         end  
     else
-    #     flash[:danger] = "Oops! There was trouble making your acount."
+        flash[:errors] = @account.errors.full_messages
         render 'new'
     end
   end

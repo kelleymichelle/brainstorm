@@ -22,9 +22,11 @@ class InventorsController < ApplicationController
     # raise params.inspect
     @inventor = Inventor.new(inventor_params)
     @inventor.account = Account.find(session[:account_id])
-    if @inventor.save!
+    if @inventor.save
+       flash[:success] = "Welcome #{@inventor.name}"
        redirect_to inventor_path(@inventor)
-    else  
+    else
+      flash[:errors] =  @inventor.errors.full_messages
       render :new
      end  
   end  

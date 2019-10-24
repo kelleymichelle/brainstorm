@@ -2,6 +2,8 @@
 <div class="top-title" >
 <%= @inventor.name %>
 
+<%= render partial: "flash_messages/success" %>
+
 <div class="dash-links">
   <% if @inventor == inventor_account %>
     <%= link_to 'Brainstorm Here!', new_inventor_idea_path(@inventor) %>

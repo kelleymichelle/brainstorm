@@ -22,7 +22,9 @@ class SessionsController < ApplicationController
         log_in(@account) and return
           
       else
-        redirect_to new_account_path and return
+        flash[:danger] = "Invalid Log in Information"
+        render :new
+        # redirect_to new_account_path and return
     end  
   end     
 

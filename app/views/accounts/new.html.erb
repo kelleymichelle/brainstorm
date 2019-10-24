@@ -3,6 +3,9 @@
 </div>  
 <%# Create Account: Are you an Inventor or an Investor? %>
 <div class="about-accountable">
+
+ <%= render partial: "flash_messages/errors" %>
+
   <%= form_for(@account) do |f| %>
     
     <div class="index-list">

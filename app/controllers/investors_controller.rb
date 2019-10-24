@@ -22,9 +22,11 @@ class InvestorsController < ApplicationController
     
     @investor = Investor.new(investor_params)
     @investor.account = Account.find(session[:account_id])
-    if @investor.save!
+    if @investor.save
+      flash[:success] = "Welcome #{@investor.name}"
       redirect_to investor_path(@investor)
     else
+      flash[:errors] = @investor.errors.full_messages
       render :new
     end  
   end

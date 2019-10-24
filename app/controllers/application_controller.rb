@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :log_in
   helper_method :new_accountable
   helper_method :find_favorite
+  helper_method :favorite?
 
   private
 
@@ -20,6 +21,7 @@ class ApplicationController < ActionController::Base
     session[:account_id] = account.id
     session[:accountable_type] = account.accountable_type
     session[:accountable] = account.accountable
+    flash[:success] = "Successfully logged in, Welcome back!"
     redirect_to dashboard_route
   end
 
@@ -66,6 +68,11 @@ class ApplicationController < ActionController::Base
 
   def find_favorite(idea_id)
     investor_account.favorites.where(idea_id: idea_id)[0]
+  end
+
+
+  def favorite?(idea)
+    self.favorites.find_by_idea_id(idea.id)
   end
 
 end
