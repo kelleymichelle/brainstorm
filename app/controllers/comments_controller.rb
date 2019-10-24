@@ -7,9 +7,12 @@ class CommentsController < ApplicationController
   
     @comment = @idea.comments.build(comment_params)
     @comment.inventor = inventor_account
-    if @comment.save!
+    if @comment.save
+      flash[:success] = "Comment Posted"
       redirect_to idea_path(@comment.idea)
-  
+    else
+      flash[:danger] = "Sorry, something went wrong" 
+      redirect_to idea_path(@idea)
     end
   end
 

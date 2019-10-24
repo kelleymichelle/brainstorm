@@ -1,9 +1,14 @@
 
 <div class="top-title">
   <%= @idea.title %>
+
+
 </div>
 
 <div class="about-accountable">
+
+  <%= render partial: "flash_messages/success" %>
+  
   <div class="index-list">Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %></div>
   <div class="index-list">Decription: <%= @idea.description %></div>
   <div class="index-list">Grouping: <%= @idea.group.name %></div>
@@ -18,7 +23,7 @@
 
         Comment and Collaborate: <br>
 
-        <%= form_tag new_idea_comment_path(@idea), :method => :patch do %>
+        <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
 
           <%= text_area_tag :'comment[text]' %><br>
 

@@ -24,10 +24,12 @@ class IdeasController < ApplicationController
   def create
     
     @idea = inventor_account.ideas.build(idea_params)
-    if @idea.save!
+    if @idea.save
+      flash[:success] = "Great Idea!"
       redirect_to inventor_idea_path(inventor_account, @idea), notice: "Brainstorm!"
     else 
-      redirect_to new_item_path
+      flash[:errors] = @idea.errors.full_messages
+      redirect_to new_idea_path
     end   
   end
 

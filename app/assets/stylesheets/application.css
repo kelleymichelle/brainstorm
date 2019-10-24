@@ -46,7 +46,9 @@
   }
 
   .nav-link:hover {
+    border: 2px dotted;
     color: navy;
+    padding: 3px;
   }
 
  /* html,  */
@@ -201,10 +203,10 @@
 
   .errors {
     color: red;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .success {
     color: green;
-    font-size: 12px;
+    font-size: 15px;
   }

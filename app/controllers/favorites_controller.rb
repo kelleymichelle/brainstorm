@@ -37,7 +37,12 @@ class FavoritesController < ApplicationController
     # byebug
     @fav = investor_account.favorites.find(params[:id])
     @fav.notes = params[:favorite][:notes]
-    @fav.save!
+    if @fav.save
+      flash[:success] = "Notes updated"
+    else
+      flash[:danger] = "Sorry, something went wrong"  
+    end  
+    
     redirect_to investor_favorites_path(investor_account)
   end
 

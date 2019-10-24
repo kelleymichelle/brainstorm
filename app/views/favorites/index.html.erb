@@ -5,6 +5,10 @@
 <div class="about-accountable">
 
 Favorite Ideas:
+
+<%= render partial: "flash_messages/danger" %>
+<%= render partial: "flash_messages/success" %>
+
   <% @investor.ideas.each do |idea| %>
     <div class="index-list">
       Idea: <%= idea.title %><br>

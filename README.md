@@ -16,6 +16,7 @@ Simple web application for Inventors to create and post ideas for Investors to v
 ### Possible Future Changes or Upgrades
 - Investor funding amount available
 - Idea funding goal met and how much remaining
+- Picture for accountable on show page with default place holder
 
 ### Technologies
 

@@ -2,7 +2,6 @@
 <div class="top-title" >
 <%= @inventor.name %>
 
-<%= render partial: "flash_messages/success" %>
 
 <div class="dash-links">
   <% if @inventor == inventor_account %>
@@ -11,6 +10,8 @@
   </div>
 </div>
 <div class="about-accountable">
+
+  <%= render partial: "flash_messages/success" %>
 
   <div class="index-list">Located in: <%= @inventor.location %></div>
 

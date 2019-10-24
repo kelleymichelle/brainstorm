@@ -43,7 +43,7 @@ class AccountsController < ApplicationController
       @account.accountable = Investor.new  
     end 
     
-    if @account.save!
+    if @account.save
       # byebug
         session[:account_id] = @account.id
         session[:accountable_type] = @account.accountable_type
@@ -58,7 +58,7 @@ class AccountsController < ApplicationController
           redirect_to new_investor_path
         end  
     else
-    #     flash[:danger] = "Oops! There was trouble making your acount."
+        flash[:errors] = @account.errors.full_messages
         render 'new'
     end
     # raise params.inspect
