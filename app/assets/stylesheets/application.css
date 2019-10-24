@@ -176,6 +176,20 @@
     padding: 8px;
   }
  /* inventor show page ideas list */
+
+  .favorite {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px;
+    /* overflow: hidden; */
+    width: 350px;
+  }
+
+  .fav-link {
+    flex-grow: 1;
+  }
+
   .idea-list {
     margin-top: 40px;
   }

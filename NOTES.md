@@ -8,20 +8,14 @@
 
 - accountable picture and default picture?
 
-   <div class="favorite">
-    <% if investor_account %>
+<%= form_for(@favorite) do |f| %>
 
-        Fund this Idea 
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
 
-        <%= form_tag '/investors/:investor_id/ideas/:id'(investor_account, @idea), :method => :put do %>
+  <%= f.submit "Add Notes to this Idea" %>
 
-          <%= check_box_tag :funded %><br>
-
-          <%= submit_tag("Submit") %>
-          
-        <% end %>
-    <% end %>    
-  </div>
+<% end %>
 
 
 # Create an Accounts table
