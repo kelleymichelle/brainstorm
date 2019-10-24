@@ -3,6 +3,9 @@
 </div>
 
 <div class="about_accountable">
+
+  <%= render partial: "flash_messages/danger" %>
+
     <%= form_tag sessions_accountable_form_path, :method => :post do %>
 
       <div class="index-list">

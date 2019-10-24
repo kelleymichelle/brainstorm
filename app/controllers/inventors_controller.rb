@@ -2,8 +2,10 @@ class InventorsController < ApplicationController
 
   before_action :authenticate_user
   before_action :inventor_account, except: [:index, :show]
+  # before_action :has_accountable, except: [:new, :create]
 
   before_action :find_inventor, only: [:show, :update]
+
 
   def show
     #inventor individual homepage
@@ -23,7 +25,7 @@ class InventorsController < ApplicationController
     @inventor = Inventor.new(inventor_params)
     @inventor.account = Account.find(session[:account_id])
     if @inventor.save
-       flash[:success] = "Welcome #{@inventor.name}"
+       flash[:success] = "Welcome #{@inventor.name}!"
        redirect_to inventor_path(@inventor)
     else
       flash[:errors] =  @inventor.errors.full_messages

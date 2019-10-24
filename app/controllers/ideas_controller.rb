@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   before_action :authenticate_user
   before_action :inventor_account, only: [:new]
+  # before_action :has_accountable
   
   before_action :find_idea, only: [:show, :update]
 

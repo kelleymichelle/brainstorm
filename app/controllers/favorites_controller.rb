@@ -1,5 +1,8 @@
 class FavoritesController < ApplicationController
 
+  before_action :investor_account
+  # before_action :has_accountable
+
   # before_action :find_investor
   # respond_to :js
 

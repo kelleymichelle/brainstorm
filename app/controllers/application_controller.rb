@@ -7,9 +7,10 @@ class ApplicationController < ActionController::Base
   helper_method :investor_account
   helper_method :dashboard_route
   helper_method :log_in
-  helper_method :new_accountable
+  helper_method :new_accountable?
   helper_method :find_favorite
   helper_method :favorite?
+  helper_method :has_accountable
 
   private
 
@@ -73,6 +74,13 @@ class ApplicationController < ActionController::Base
 
   def favorite?(idea)
     self.favorites.find_by_idea_id(idea.id)
+  end
+
+  def has_accountable
+    if current_user.accountable == nil
+      flash[:danger] = "Please finish signing up"
+      redirect_to sessions_accountable_form_path
+    end  
   end
 
 end
