@@ -2,3 +2,14 @@
   <%= @idea.title %>
 </div>
 
+<div class="about-accountable">
+  <%= form_for(@favorite) do |f| %>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+    <%= f.hidden_field :id %>
+
+    <%= f.submit "Add Notes to this Idea" %>
+
+  <% end %>
+</div>

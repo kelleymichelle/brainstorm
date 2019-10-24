@@ -30,10 +30,21 @@ class FavoritesController < ApplicationController
     # byebug
     @idea = Idea.find(params[:idea_id])
     @favorite = find_favorite(@idea)
+    # byebug
   end
 
   def update
+    # byebug
+    @fav = investor_account.favorites.find(params[:id])
+    @fav.notes = params[:favorite][:notes]
+    @fav.save!
+    redirect_to investor_favorites_path(investor_account)
+  end
 
+  private
+
+  def note_params
+    params.require(:favorite).permit(:notes, :id)
   end
 
 

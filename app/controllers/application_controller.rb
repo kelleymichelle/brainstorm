@@ -65,7 +65,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_favorite(idea_id)
-    investor_account.favorites.where(idea_id: idea_id)
+    investor_account.favorites.where(idea_id: idea_id)[0]
   end
 
 end

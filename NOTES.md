@@ -8,14 +8,7 @@
 
 - accountable picture and default picture?
 
-<%= form_for(@favorite) do |f| %>
 
-  <%= f.label :notes %>
-  <%= f.text_area :notes %>
-
-  <%= f.submit "Add Notes to this Idea" %>
-
-<% end %>
 
 
 # Create an Accounts table
