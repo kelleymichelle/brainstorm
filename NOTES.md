@@ -1,8 +1,8 @@
-# To Do as of 10/23
+# Current TODO
+
+- form partial for investor
 
 - refactor code and create partials
-
-- error messages
 
 - accountable picture and default picture?
 
