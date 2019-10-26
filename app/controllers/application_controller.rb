@@ -48,7 +48,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  #in application helper file
   def dashboard_route
     if investor_account
       investor_path(current_user.accountable)

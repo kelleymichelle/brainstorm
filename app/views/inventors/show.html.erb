@@ -13,11 +13,7 @@
 
   <%= render partial: "flash_messages/success" %>
 
-  <div class="index-list">Located in: <%= @inventor.location %></div>
-
-  <div class="index-list">About me: <%= @inventor.bio %></div>
-
-  <div class="index-list">Contact <%= @inventor.name %>: <%= @inventor.account.email %></div>
+  <%= render 'about', user: @inventor %>
 
 
   <div class="comment-container">

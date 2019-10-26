@@ -1,7 +1,5 @@
 # Current TODO
 
-- form partial for investor
-
 - refactor code and create partials
 
 - accountable picture and default picture?
@@ -36,4 +34,11 @@ after you create your account, redirect to either investor#new OR inventor#new b
 
 @inventor = Inventor.new(inventor_params)
 @inventor.account = Account.find(session[:account_id])
+
+ Located in: <%= @investor.location %><br>
+
+  <div class="index-list">
+    A little about what I do: <%= @investor.bio %><br>
+  </div>
+
 

@@ -11,12 +11,7 @@
 
   <%= render partial: "flash_messages/success" %>
   
-  Located in: <%= @investor.location %><br>
-
-  <div class="index-list">
-    A little about what I do: <%= @investor.bio %><br>
-  </div>
-
+  <%= render "/inventors/about", user: @investor %>
 
 </div>
 
