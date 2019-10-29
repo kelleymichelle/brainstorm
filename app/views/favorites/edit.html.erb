@@ -1,15 +1,18 @@
 <div class="top-title">
-  <%= @idea.title %>
+  <center>
+    <%= @idea.title %><br><br>
+    Notes
+  </center>
 </div>
 
 <div class="about-accountable">
   <%= form_for(@favorite) do |f| %>
 
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
+    
+    <%= f.text_area :notes, placeholder: "Type notes here...", size: "96x25" %>
     
     <%= f.hidden_field :id %>
-
+    <br>
     <%= f.submit "Add Notes to this Idea" %>
 
   <% end %>

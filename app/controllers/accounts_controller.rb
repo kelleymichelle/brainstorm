@@ -14,17 +14,13 @@ class AccountsController < ApplicationController
       end  
       
     if @account.save
-      
         session[:account_id] = @account.id
         session[:accountable_type] = @account.accountable_type
         session[:accountable_id] = @account.accountable.id
       
-        
         if @account.accountable_type == "Inventor"
-          # @account.accountable = Inventor.new
           redirect_to new_inventor_path
         else @account.accountable_type == "Investor"
-          # @account.accountable = Investor.new
           redirect_to new_investor_path
         end  
     else
@@ -44,25 +40,19 @@ class AccountsController < ApplicationController
     end 
     
     if @account.save
-      # byebug
         session[:account_id] = @account.id
         session[:accountable_type] = @account.accountable_type
         session[:accountable_id] = @account.accountable.id
       
-        # flash[:success] = "Welcome #{@account.username}!"
         if @account.accountable_type == "Inventor"
-          # @account.accountable = Inventor.new
           redirect_to new_inventor_path
         else @account.accountable_type == "Investor"
-          # @account.accountable = Investor.new
           redirect_to new_investor_path
         end  
     else
         flash[:errors] = @account.errors.full_messages
         render 'new'
     end
-    # raise params.inspect
-
   end
 
   def update
