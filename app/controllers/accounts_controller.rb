@@ -7,11 +7,8 @@ class AccountsController < ApplicationController
   def create
     
     @account = Account.new(account_params)
-      if @account.accountable_type == "Inventor"
-        @account.accountable = Inventor.new
-      else @account.accountable_type == "Investor"
-        @account.accountable = Investor.new  
-      end  
+      
+      account_accountable_type
       
     if @account.save
         session[:account_id] = @account.id
@@ -33,11 +30,8 @@ class AccountsController < ApplicationController
     
     @account = Account.new(session[:account])
     @account.accountable_type = params[:account][:accountable_type]
-    if @account.accountable_type == "Inventor"
-      @account.accountable = Inventor.new
-    else @account.accountable_type == "Investor"
-      @account.accountable = Investor.new  
-    end 
+    
+      account_accountable_type
     
     if @account.save
         session[:account_id] = @account.id
@@ -63,6 +57,14 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(:username, :email, :password, :password_confirmation, :accountable_type, :uid)
+  end
+
+  def account_accountable_type
+    if @account.accountable_type == "Inventor"
+      @account.accountable = Inventor.new
+    else @account.accountable_type == "Investor"
+      @account.accountable = Investor.new  
+    end 
   end
 
 end
