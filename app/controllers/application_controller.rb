@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   helper_method :find_favorite
   helper_method :favorite?
   helper_method :has_accountable
+  helper_method :missing_accountable
+  helper_method :accountable_signup
 
   private
 
@@ -24,8 +26,13 @@ class ApplicationController < ActionController::Base
     session[:account_id] = account.id
     session[:accountable_type] = account.accountable_type
     session[:accountable] = account.accountable
-    flash[:success] = "Successfully logged in, Welcome back!"
-    redirect_to dashboard_route
+    # byebug
+    if !account.accountable
+      missing_accountable
+    else  
+      flash[:success] = "Successfully logged in, Welcome back!"
+      redirect_to dashboard_route
+    end
   end
 
   def logged_in?
@@ -38,7 +45,7 @@ class ApplicationController < ActionController::Base
     end 
   end
 
-  def inventor_account
+  def inventor_account 
     if current_user.accountable_type == "Inventor"
       current_user.accountable
     end
@@ -52,8 +59,8 @@ class ApplicationController < ActionController::Base
 
   def dashboard_route
     # byebug
-    # if 
-    #   !current_user.accountable
+    # if current_user.accountable_type && !current_user.accountable
+    # #   !current_user.accountable
     #   flash[:danger] = "Please finish signing up"
     #   accountable_signup
     # else
@@ -87,10 +94,10 @@ class ApplicationController < ActionController::Base
   end
 
   def missing_accountable
-    if !current_user.accountable
+    if !current_user.accountable_type
       flash[:danger] = "Please finish signing up"
       redirect_to sessions_accountable_form_path
-    else !current_user.accountable.id
+    else current_user.accountable_type && !current_user.accountable
       flash[:danger] = "Please finish signing up"
       accountable_signup
     end  
