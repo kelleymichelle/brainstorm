@@ -4,7 +4,7 @@
     <a href="/"><%= image_tag "brain-light.jpg", height: "60" %></a>
   </div>
 
-    <% if logged_in? %>
+    
       <% if current_user.accountable %>
         <%= link_to 'My Dashboard', dashboard_route, class: "nav-link" %>
       <% end %>
@@ -16,9 +16,5 @@
         <%= link_to 'About Invention', about_invention_path, class: "nav-link" %>
         <%= link_to 'Types of Invention', groups_path, class: "nav-link" %>
         <%= link_to 'Log Out', logout_path, class: "nav-link" %>
-      <% else %> 
-        <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
-        <%= link_to 'Sign In', login_path, class: "nav-link" %>
-        <%= link_to 'Sign In with Facebook', '/auth/facebook', class: "nav-link" %>
-      <% end %>
+      
   </div>

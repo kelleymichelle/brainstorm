@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     session[:account_id] = account.id
     session[:accountable_type] = account.accountable_type
     session[:accountable] = account.accountable
-    # byebug
+    
     if !account.accountable
       missing_accountable
     else  
@@ -69,9 +69,7 @@ class ApplicationController < ActionController::Base
   end
 
   def new_accountable?(act)
-    # act = session[:account]
     if act.accountable == nil
-      # render 'sessions/accountable_form'
       redirect_to sessions_accountable_form_path
     else
       log_in(act)  
