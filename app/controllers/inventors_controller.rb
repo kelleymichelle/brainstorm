@@ -4,7 +4,7 @@ class InventorsController < ApplicationController
   before_action :inventor_account, except: [:index, :show]
   # before_action :has_accountable, except: [:new, :create]
 
-  before_action :find_inventor, only: [:show, :update]
+  before_action :find_inventor, only: [:show, :edit, :update]
 
 
   def show
@@ -35,9 +35,18 @@ class InventorsController < ApplicationController
 
   
 
-  # def edit
-  #   @inventor = current_user.accountable
-  # end
+  def edit
+    
+  end
+
+  def update
+    if @inventor.update(inventor_params)
+      flash[:success] = "Your info successfully updated!"
+      render :show
+    else
+      flash[:errors] = @inventor.errors.full_messages  
+    end
+  end
 
   # def update
   #   if @inventor.update(inventor_params)

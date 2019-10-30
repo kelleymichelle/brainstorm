@@ -1,6 +1,6 @@
 # Current TODO
 
-- refactor code and create partials
+- ability to edit investor and inventor show
 
 - accountable picture and default picture?
 
