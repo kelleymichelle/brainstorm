@@ -13,6 +13,7 @@
   <div class="index-list">Decription: <%= @idea.description %></div>
   <div class="index-list">Grouping: <%= @idea.group.name %></div>
   <div class="index-list">Funding Goal: $<%= @idea.fund_goal %></div>
+  <div class="index-list"><%= mail_to(@idea.inventor.account.email, "Contact Inventor") %></div>
 
   <div class="favorite">
       <%= render partial: "favorites/button" %>

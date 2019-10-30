@@ -51,10 +51,19 @@ class ApplicationController < ActionController::Base
   end
 
   def dashboard_route
-    if investor_account
-      investor_path(current_user.accountable)
-    else inventor_account
-      inventor_path(current_user.accountable)
+    # byebug
+    # if 
+    #   !current_user.accountable
+    #   flash[:danger] = "Please finish signing up"
+    #   accountable_signup
+    # else
+      if investor_account
+        investor_path(current_user.accountable)
+      else inventor_account
+        inventor_path(current_user.accountable)
+      # else
+      #   missing_accountable
+        # end
     end    
   end
 
@@ -77,10 +86,21 @@ class ApplicationController < ActionController::Base
     self.favorites.find_by_idea_id(idea.id)
   end
 
-  def has_accountable
-    if current_user.accountable == nil
+  def missing_accountable
+    if !current_user.accountable
       flash[:danger] = "Please finish signing up"
       redirect_to sessions_accountable_form_path
+    else !current_user.accountable.id
+      flash[:danger] = "Please finish signing up"
+      accountable_signup
+    end  
+  end
+
+  def accountable_signup
+    if current_user.accountable_type == "Inventor"
+      redirect_to new_inventor_path and return
+    else current_user.accountable_type == "Investor"
+      redirect_to new_investor_path and return
     end  
   end
 
