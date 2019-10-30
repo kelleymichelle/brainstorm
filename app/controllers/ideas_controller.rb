@@ -1,7 +1,6 @@
 class IdeasController < ApplicationController
   before_action :authenticate_user
   before_action :inventor_account, only: [:new]
-  # before_action :missing_accountable
   before_action :has_accountable?
   
   before_action :find_idea, only: [:show, :edit, :update]
@@ -24,7 +23,6 @@ class IdeasController < ApplicationController
   end
 
   def create
-    
     @idea = inventor_account.ideas.build(idea_params)
     if @idea.save
       flash[:success] = "Great Idea!"

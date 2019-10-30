@@ -59,12 +59,10 @@ class ApplicationController < ActionController::Base
   end
 
   def dashboard_route
-   
-      if investor_account
-        investor_path(current_user.accountable)
-      else inventor_account
-        inventor_path(current_user.accountable)
-     
+    if investor_account
+      investor_path(current_user.accountable)
+    else inventor_account
+      inventor_path(current_user.accountable)
     end    
   end
 

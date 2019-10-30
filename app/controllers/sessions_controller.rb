@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     end
 
       @account = Account.find_by(email: params[:email])
-      # @account = Account.find_by(username: params[:username])
+      
       if @account && @account.authenticate(params[:password])
         log_in(@account) and return
           

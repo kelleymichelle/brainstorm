@@ -22,35 +22,33 @@ Rails.application.routes.draw do
   
   post '/ideas/:id/comments/new', to: 'comments#create'
 
-  resources :favorites
+  
 
   resources :inventors do
     resources :ideas
-      resources :favorites
+      # resources :favorites
   end
   
   resources :investors do
     resources :ideas do
-      resources :favorites
+      resources :favorites, only: [:new, :create, :edit, :update, :delete]
     end 
   end  
 
   resources :investors do
-    resources :favorites
+    resources :favorites, only: [:index, :edit, :update]
   end
   
 
   resources :ideas do
-    resources :comments
+    resources :comments, only: [:new, :create]
   end
 
+  # resources :favorites
   resources :investors
   resources :inventors
   resources :accounts
-  
-
-  resources :comments
-  resources :groups
+  resources :groups, only: [:index]
   resources :ideas
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

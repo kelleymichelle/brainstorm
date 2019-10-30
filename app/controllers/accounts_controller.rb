@@ -21,9 +21,9 @@ class AccountsController < ApplicationController
   
   end
 
-  def update
+  # def update
 
-  end
+  # end
 
   private
 

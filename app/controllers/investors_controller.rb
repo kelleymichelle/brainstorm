@@ -2,7 +2,6 @@ class InvestorsController < ApplicationController
 
   before_action :authenticate_user
   before_action :investor_account, except: [:index, :show] 
-  # before_action :missing_accountable, except: [:new, :create]
   before_action :has_accountable?, except: [:new, :create]
 
   before_action :find_investor, only: [:show, :edit, :update]
@@ -32,12 +31,6 @@ class InvestorsController < ApplicationController
       render :new
     end  
   end
-
-  # def add_to_favorites
-  #   byebug
-  #   raise params.inspect
-  # end
-  
 
   def edit
     

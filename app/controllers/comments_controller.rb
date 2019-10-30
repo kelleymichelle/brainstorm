@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   before_action :find_idea
 
   def create
-  
     @comment = @idea.comments.build(comment_params)
     @comment.inventor = inventor_account
     if @comment.save

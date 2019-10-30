@@ -1,10 +1,6 @@
 class FavoritesController < ApplicationController
 
   before_action :investor_account
-  # before_action :has_accountable
-
-  # before_action :find_investor
-  # respond_to :js
 
   def index
     @investor = investor_account
@@ -20,7 +16,6 @@ class FavoritesController < ApplicationController
   end
 
   def unfavorite
-    # byebug
     @user = investor_account
     @favorite = @user.favorites.find_by_idea_id(params[:idea_id])
     @idea = Idea.find(params[:idea_id])
@@ -29,15 +24,11 @@ class FavoritesController < ApplicationController
   end
 
   def edit
-    # raise params.inspect
-    # byebug
     @idea = Idea.find(params[:idea_id])
     @favorite = find_favorite(@idea)
-    # byebug
   end
 
   def update
-    # byebug
     @fav = investor_account.favorites.find(params[:id])
     @fav.notes = params[:favorite][:notes]
     if @fav.save
