@@ -4,7 +4,7 @@ class InvestorsController < ApplicationController
   before_action :investor_account, except: [:index, :show] 
   # before_action :has_accountable, except: [:new, :create]
 
-  before_action :find_investor, only: [:show, :update]
+  before_action :find_investor, only: [:show, :edit, :update]
 
 
   def show
@@ -39,15 +39,16 @@ class InvestorsController < ApplicationController
   
 
   def edit
-    @investor = current_user.accountable
+    
   end
 
   def update
     if @investor.update(investor_params)
-      redirect_to investor_path(@investor)
+      flash[:success] = "Your info successfully updated!"
+      render :show
     else
-      render :edit
-    end    
+      flash[:errors] = @investor.errors.full_messages  
+    end  
   end
 
   private
