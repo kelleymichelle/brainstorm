@@ -28,7 +28,7 @@
 
         <%= form_tag new_idea_comment_path(@idea), :method => :post do %>
 
-          <%= text_area_tag :'comment[text]' %><br>
+          <%= text_area_tag :'comment[text]', "Type comment here...", size: "55x10" %><br>
 
           <%= submit_tag("Submit") %>
           
