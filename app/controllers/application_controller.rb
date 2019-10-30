@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   helper_method :has_accountable
   helper_method :missing_accountable
   helper_method :accountable_signup
+  helper_method :has_accountable?
 
   private
 
@@ -58,19 +59,12 @@ class ApplicationController < ActionController::Base
   end
 
   def dashboard_route
-    # byebug
-    # if current_user.accountable_type && !current_user.accountable
-    # #   !current_user.accountable
-    #   flash[:danger] = "Please finish signing up"
-    #   accountable_signup
-    # else
+   
       if investor_account
         investor_path(current_user.accountable)
       else inventor_account
         inventor_path(current_user.accountable)
-      # else
-      #   missing_accountable
-        # end
+     
     end    
   end
 
@@ -101,6 +95,12 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "Please finish signing up"
       accountable_signup
     end  
+  end
+
+  def has_accountable?
+    if !current_user.accountable
+      missing_accountable
+    end
   end
 
   def accountable_signup

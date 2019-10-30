@@ -2,7 +2,7 @@ class InventorsController < ApplicationController
 
   before_action :authenticate_user
   before_action :inventor_account, except: [:index, :show]
-  # before_action :has_accountable, except: [:new, :create]
+  before_action :has_accountable?, except: [:new, :create]
 
   before_action :find_inventor, only: [:show, :edit, :update]
 
@@ -16,12 +16,10 @@ class InventorsController < ApplicationController
   end
 
   def new
-    # current_user.accountable = Inventor.new
     @inventor = Inventor.new
   end
 
   def create
-    # raise params.inspect
     @inventor = Inventor.new(inventor_params)
     @inventor.account = Account.find(session[:account_id])
     if @inventor.save
@@ -32,8 +30,6 @@ class InventorsController < ApplicationController
       render :new
      end  
   end  
-
-  
 
   def edit
     
@@ -48,14 +44,6 @@ class InventorsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @inventor.update(inventor_params)
-  #     redirect_to inventor_path(@inventor)
-  #   else  
-  #     render :edit
-  #   end  
-  # end
-
   private
 
   def inventor_params
@@ -65,6 +53,5 @@ class InventorsController < ApplicationController
   def find_inventor
     @inventor = Inventor.find(params[:id])
   end
-
 
 end
