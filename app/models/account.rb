@@ -2,7 +2,7 @@ class Account < ApplicationRecord
 
   has_secure_password
 
-  validates :username, presence: true
+  # validates :username, presence: true
   # validates :password_confirmation, presence: true, on: :create
   validates :password, presence: true, if: :setting_password?
   validates :email, presence: true, length: { minimum: 5 }

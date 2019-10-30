@@ -42,3 +42,9 @@ after you create your account, redirect to either investor#new OR inventor#new b
   </div>
 
 
+    <div class="index-list">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+
+

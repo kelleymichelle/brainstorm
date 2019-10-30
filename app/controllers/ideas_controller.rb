@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
   before_action :inventor_account, only: [:new]
   # before_action :has_accountable
   
-  before_action :find_idea, only: [:show, :update]
+  before_action :find_idea, only: [:show, :edit, :update]
 
   def index
     @ideas = Idea.all
@@ -32,6 +32,19 @@ class IdeasController < ApplicationController
       flash[:errors] = @idea.errors.full_messages
       redirect_to new_idea_path
     end   
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @idea.update(idea_params)
+      flash[:success] = "Idea successfully updated!"
+      render :show
+    else
+      flash[:errors] = @idea.errors.full_messages  
+    end
   end
 
   private
