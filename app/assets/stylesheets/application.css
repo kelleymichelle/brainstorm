@@ -135,11 +135,13 @@
     background-color: gainsboro;
     font-family: Palatino;
     font-size: 50px;
+    padding-top: 30px;
   }
 
   .dash-links {
    /* margin-top: 25px; */
     font-size: 22px;
+    margin: 20px;
   }
 
  
@@ -155,7 +157,6 @@
     justify-content: space-around;
     align-items: left;
     margin-top: 20px;
-    
     /* justify-content: center; */
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
@@ -201,6 +202,7 @@
     justify-content: flex-end;
   }
 
+  /* flash messages */
   .errors {
     color: red;
     font-size: 15px;
@@ -212,6 +214,6 @@
   }
 
   .popular {
-    color: green;
+    color: magenta;
     font-size: 30px;
   }

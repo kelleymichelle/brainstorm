@@ -1,5 +1,13 @@
 <div class="top-title">
   <%= @investor.name %>
+
+
+    <div class="dash-links">
+    <center>
+      <%= image_tag("investor-hand2.png", style:'width:40%') %>
+      </center>
+    </div>
+
     <div class="dash-links"><%= link_to 'Ideas Currently Funding', investor_favorites_path(@investor) %></div>
     <div class="dash-links"><%= link_to 'View Ideas', ideas_path %></div>
     <div class="dash-links"><%= link_to 'Inventors', inventors_path %></div>
