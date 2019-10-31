@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
+  resources :favorites
   resources :investors
   resources :inventors
   resources :accounts
