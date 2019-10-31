@@ -3,6 +3,7 @@ class Idea < ApplicationRecord
   belongs_to :group
   has_many :comments, dependent: :destroy
 
+  has_many :favorites
   has_many :investors, through: :favorites
 
   validates :title, presence: true
@@ -15,5 +16,13 @@ class Idea < ApplicationRecord
     @investor.ideas.where(id: self.id)
   end
 
+  def self.most_popular
+    i = Idea.all.sort_by{|idea| idea.favorite_count}.map(&:id).last
+    Idea.find_by_id(i)
+  end
+
+  def favorite_count
+    self.favorites.count
+  end
   
 end

@@ -14,11 +14,8 @@ Rails.application.routes.draw do
   post '/sessions/accountable_form', to: 'accounts#create_from_fb'
   
   post '/investors/:investor_id/ideas/:idea_id/favorites/new', to: 'favorites#create'
-  # match 'favorite', to: 'favorites#create', via: :post
+ 
   match 'unfavorite', to: 'favorites#unfavorite', via: :delete
-  # patch '/investors/:investor_id/ideas/:id', to: 'investors#add_to_favorites'
-  
-  # get '/auth/failure', to: redirect('/'), via: [:get, :post]
   
   post '/ideas/:id/comments/new', to: 'comments#create'
 
@@ -38,13 +35,11 @@ Rails.application.routes.draw do
   resources :investors do
     resources :favorites, only: [:index, :edit, :update]
   end
-  
 
   resources :ideas do
     resources :comments, only: [:new, :create]
   end
 
-  # resources :favorites
   resources :investors
   resources :inventors
   resources :accounts

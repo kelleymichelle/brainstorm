@@ -47,4 +47,8 @@ after you create your account, redirect to either investor#new OR inventor#new b
       <%= f.text_field :username %>
     </div>
 
+  Idea.all.sort_by{|idea| idea.favorite_count}
+
+  Idea.all.sort_by{|idea| idea.favorite_count}.map(&:id).last
+
 
