@@ -11,8 +11,8 @@ Favorite Ideas:
 
   <% @investor.ideas.each do |idea| %>
     <div class="index-list">
-      Idea: <%= idea.title %><br>
-      Inventor: <%= idea.inventor.name %><br>
+      Idea: <%= link_to idea.title, idea_path(idea) %><br>
+      Inventor: <%= link_to idea.inventor.name, inventor_path(idea.inventor) %><br>
       Notes: <%= find_favorite(idea).notes %><br>
     
       <%= link_to "Add or Change Notes", edit_investor_idea_favorite_path(@investor, idea, idea) %>
