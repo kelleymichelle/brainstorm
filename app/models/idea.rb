@@ -17,8 +17,7 @@ class Idea < ApplicationRecord
   end
 
   def self.most_popular
-    i = Idea.all.sort_by{|idea| idea.favorite_count}.map(&:id).last
-    Idea.find_by_id(i)
+    Idea.all.sort_by{|idea| idea.favorite_count}.last
   end
 
   def favorite_count

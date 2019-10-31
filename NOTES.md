@@ -51,4 +51,8 @@ after you create your account, redirect to either investor#new OR inventor#new b
 
   Idea.all.sort_by{|idea| idea.favorite_count}.map(&:id).last
 
+   id = Idea.all.sort_by{|idea| idea.favorite_count}.map(&:id).last
+    Idea.find_by_id(id)
+
+
 
