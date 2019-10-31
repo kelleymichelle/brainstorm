@@ -46,6 +46,12 @@ class IdeasController < ApplicationController
     end
   end
 
+  def most_popular
+    @idea = Idea.most_popular
+    flash[:popular] = "Most Popular Idea!"
+    render :show
+  end
+
   private
 
   def idea_params

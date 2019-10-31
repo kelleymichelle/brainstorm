@@ -3,6 +3,10 @@
 </div>
 <div class="about-accountable">
 
+  <div class="index-list">
+    <%= link_to "Click to View Most Popular Idea!", ideas_most_popular_path %>
+  </div>
+
       <% @ideas.each do |idea| %>
     <div class="index-list">
         <%= link_to idea.title, idea_path(idea) %><br>

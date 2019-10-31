@@ -8,6 +8,7 @@
 <div class="about-accountable">
 
   <%= render partial: "flash_messages/success" %>
+  <%= render partial: "flash_messages/popular" %>
   
   <div class="index-list">Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %></div>
   <div class="index-list">Decription: <%= @idea.description %></div>

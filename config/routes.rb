@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   
   post '/ideas/:id/comments/new', to: 'comments#create'
 
+  get '/ideas/most_popular', to: 'ideas#most_popular'
+
   
 
   resources :inventors do
