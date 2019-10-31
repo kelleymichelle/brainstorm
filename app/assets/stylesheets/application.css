@@ -125,7 +125,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     min-width: 500px;
     
     margin-top: 20px;
@@ -135,13 +135,14 @@
     background-color: gainsboro;
     font-family: Palatino;
     font-size: 50px;
-    padding-top: 30px;
+    padding-top: 100px;
   }
 
   .dash-links {
    /* margin-top: 25px; */
     font-size: 22px;
-    margin: 20px;
+    /* margin: 20px; */
+    padding: 40px;
   }
 
  
@@ -154,7 +155,7 @@
     border-top: 5px solid navy;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: left;
     margin-top: 20px;
     /* justify-content: center; */
@@ -164,6 +165,7 @@
 
   .index-list {
     margin: 20px;
+    padding: 10px;
   }
 
   .comment-container {
