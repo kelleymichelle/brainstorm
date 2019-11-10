@@ -11,14 +11,15 @@ class Idea < ApplicationRecord
   validates :fund_goal, presence: true
   validates :group, presence: true
 
+  scope :most_popular, ->(){joins(:favorites).group(:idea_id).order(Arel.sql('count(favorites.id) desc')).limit(1).first}
 
   def find_favorite(idea)
     @investor.ideas.where(id: self.id)
   end
 
-  def self.most_popular
-    Idea.all.sort_by{|idea| idea.favorite_count}.last
-  end
+  # def self.most_popular
+  #   Idea.all.sort_by{|idea| idea.favorite_count}.last
+  # end
 
   def favorite_count
     self.favorites.count
