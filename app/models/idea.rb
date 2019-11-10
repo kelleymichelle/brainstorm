@@ -17,10 +17,6 @@ class Idea < ApplicationRecord
     @investor.ideas.where(id: self.id)
   end
 
-  # def self.most_popular
-  #   Idea.all.sort_by{|idea| idea.favorite_count}.last
-  # end
-
   def favorite_count
     self.favorites.count
   end
