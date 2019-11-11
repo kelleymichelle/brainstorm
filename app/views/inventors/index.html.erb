@@ -1,6 +1,12 @@
 <div class="top-title">
   All Inventors
+
+<%= form_tag inventors_path, :method => :get do %>
+  <%= text_field_tag :'search' %>
+  <%= submit_tag("Submit") %>
+<% end %>
 </div>
+
 <div class="about-accountable">
   <% @inventors.each do |inventor| %>
     <div class="index-list"><%= link_to inventor.name, inventor_path(inventor) %></div>

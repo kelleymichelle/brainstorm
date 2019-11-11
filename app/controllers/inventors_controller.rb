@@ -14,7 +14,13 @@ class InventorsController < ApplicationController
   end
 
   def index
+    if params[:search]
+      # byebug
+      # @inventors = Inventor.all.select{|i| i.name.capitalize.include?(params[:search].capitalize)}
+      @inventors = Inventor.where("name LIKE ?", "%#{params[:search]}%")
+    else  
     @inventors = Inventor.all
+    end
   end
 
   def new
