@@ -25,12 +25,12 @@ class InventorsController < ApplicationController
     @inventor = Inventor.new(inventor_params)
     @inventor.account = Account.find(session[:account_id])
     if @inventor.save
-       flash[:success] = "Welcome #{@inventor.name}!"
-       redirect_to inventor_path(@inventor)
+      flash[:success] = "Welcome #{@inventor.name}!"
+      redirect_to inventor_path(@inventor)
     else
       flash[:errors] =  @inventor.errors.full_messages
       render :new
-     end  
+    end  
   end  
 
   def edit

@@ -9,6 +9,7 @@
 
   <%= render partial: "flash_messages/success" %>
   <%= render partial: "flash_messages/popular" %>
+  <%= render partial: "flash_messages/danger" %>
   
   <div class="index-list">Inventor: <%=link_to @idea.inventor.name, inventor_path(@idea.inventor) %></div>
   <div class="index-list">Decription: <%= @idea.description %></div>

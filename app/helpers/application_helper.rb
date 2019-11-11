@@ -1,6 +1,4 @@
 module ApplicationHelper
-  #before_action :inventor_account
-  #before_action :investor_account
 
   def dashboard_route
     if investor_account

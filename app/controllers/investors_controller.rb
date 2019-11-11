@@ -22,7 +22,6 @@ class InvestorsController < ApplicationController
   end
 
   def create
-    
     @investor = Investor.new(investor_params)
     @investor.account = Account.find(session[:account_id])
     if @investor.save

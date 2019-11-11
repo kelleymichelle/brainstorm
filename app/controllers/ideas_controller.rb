@@ -34,7 +34,7 @@ class IdeasController < ApplicationController
   end
 
   def edit
-
+    inventor_check(@idea)
   end
 
   def update
@@ -60,6 +60,13 @@ class IdeasController < ApplicationController
 
   def find_idea
     @idea = Idea.find(params[:id])
+  end
+
+  def inventor_check(idea)
+    if !current_user.accountable.ideas.include?(idea)
+      flash[:danger] = "Access Denied!"
+      render :show
+    end
   end
 
 end

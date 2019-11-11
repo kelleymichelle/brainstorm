@@ -6,7 +6,6 @@ module IdeasHelper
   end
 
   def mail_link
-    # byebug
     if current_user.accountable != @idea.inventor
       render "ideas/mail_to"
     end 

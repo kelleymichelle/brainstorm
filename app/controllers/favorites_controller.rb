@@ -7,11 +7,9 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    # byebug
     @user = investor_account
     @idea = Idea.find(params[:idea_id])
     @user.favorite!(@idea)
-    # byebug
     redirect_to idea_path(@idea)
   end
 

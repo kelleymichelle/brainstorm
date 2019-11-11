@@ -9,10 +9,8 @@ class Investor < ApplicationRecord
   has_many :inventors, through: :ideas
   has_many :favorites
   has_many :ideas, through: :favorites
-  # has_many :favorites, through: :ideas, dependent: :destroy
 
   def favorite!(idea)
-    # byebug
     self.favorites.build(idea_id: idea.id).save
   end
 
