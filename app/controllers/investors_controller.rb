@@ -6,6 +6,8 @@ class InvestorsController < ApplicationController
 
   before_action :find_investor, only: [:show, :edit, :update]
 
+  before_action :does_accountable_exist?, only: [:new]
+
 
   def show
     #individual show page

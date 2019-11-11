@@ -6,6 +6,8 @@ class InventorsController < ApplicationController
 
   before_action :find_inventor, only: [:show, :edit, :update]
 
+  before_action :does_accountable_exist?, only: [:new]
+
 
   def show
     #inventor individual homepage

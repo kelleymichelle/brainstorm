@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   helper_method :missing_accountable
   helper_method :accountable_signup
   helper_method :has_accountable?
+  helper_method :does_accountable_exist?
 
   private
 
@@ -105,6 +106,12 @@ class ApplicationController < ActionController::Base
     else current_user.accountable_type == "Investor"
       redirect_to new_investor_path and return
     end  
+  end
+
+  def does_accountable_exist?
+    if current_user.accountable
+      redirect_to dashboard_route
+    end
   end
 
 end
