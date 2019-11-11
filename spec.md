@@ -32,7 +32,7 @@ Specs:
 Confirm:
 - [x] The application is pretty DRY
 
-- [ ] Limited logic in controllers
+- [x] Limited logic in controllers
 
 - [x] Views use helper methods if appropriate
 
