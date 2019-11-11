@@ -64,7 +64,7 @@ class IdeasController < ApplicationController
 
   def inventor_check(idea)
     if !current_user.accountable.ideas.include?(idea)
-      flash[:danger] = "Access Denied!"
+      flash[:danger] = "Negative Ghostrider, stick to your own ideas"
       render :show
     end
   end
